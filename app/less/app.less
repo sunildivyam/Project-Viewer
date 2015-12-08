@@ -1,0 +1,32 @@
+.main-menu {
+	display: block;	
+	padding: 1px 10px;
+	border-radius: 5px;
+	margin: 10px;
+
+	background: linear-gradient(to bottom, red, darkred);
+
+	a {
+		display: inline-block;
+		padding: 5px 5px 2px 0px;
+		color: white;
+		text-decoration: none;
+		font-size: 20px;
+		border-right: 1px solid darken(red, 10%);
+		&:hover {
+			background: linear-gradient(to bottom, gray, darkgray);			
+		}
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+}
+
+.container {
+	display: block;	
+	padding: 1px 10px;
+	border: 1px solid lighten(grey, 10%);
+	border-radius: 5px;
+	margin: 10px;
+}
