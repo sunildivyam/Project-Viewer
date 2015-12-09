@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="pvApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="pvApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="pvApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="pvApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Projects Viewer Application</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -15,27 +15,20 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
-<body ng-app="pvApp" ng-controller="appController">
-
-  <div class="main-header">
+<body ng-controller="appController">
     <nav class="main-menu">
       <a ui-sref="home" class="logo">Project Viewer</a>
       <a ui-sref="sqltool">SQL Tool</a>
-      <a href="#/project2">Project 2</a>
-      <a href="#/aboutus">About us</a>
-      <a href="#/contactus">Contact us</a>
-      <a href="#/products">Products</a>
     </nav>
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <div class="container" ui-view=""></div>    
-  </div>
+
 <footer class="main-footer">
-  <span>Project Viewer Application: <span app-version></span></span>
+  <span>Project Viewer Application</span>
   <span>
-    <b>Developer: </b> Sunil Kumar
+    <b>Contributors: </b> Sunil Kumar
   </span>
 </footer>  
 
@@ -45,21 +38,20 @@
 
   <script src="bower_components/angular/angular.min.js"></script>  
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>  
-  <script src="bower_components/angular-ui-router.stateHelper/stateHelper.js"></script>
-
-<!-- Angular Templates 
+ <script src="bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
+ <!-- Angular Templates -->
   <script type="text/ng-template" id="home.html" src="subprojects/pages/base/landing.html"></script> 
   <script type="text/ng-template" id="sql-tool.html" src="subprojects/pages/sqlTool/landing.html"></script> 
- *******-->
+<!-- *******-->
 
 
   <script src="subprojects/etc/base/base.js"></script>
   <script src="subprojects/etc/base/controllers/appController.js"></script>
   <script src="subprojects/etc/base/controllers/homeController.js"></script>
- <!-- 
+
   <script src="subprojects/etc/sqlTool/sqlTool.js"></script>
   <script src="subprojects/etc/sqlTool/controllers/sqlToolController.js"></script>
--->
+
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

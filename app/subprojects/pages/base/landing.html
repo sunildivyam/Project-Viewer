@@ -1,1 +1,30 @@
-<h1>Home Landing Page</h1>
+<h1>Add | Develope | Test | multiple Projects at one Place</h1>
+<h2>Project Viewer is a container Application, where independent angular Projects can be added as modules. These Projects can be developed tested independently. Each projects's home page is available from the main Navigation</h2>
+Please download, SVN checkout or git <a href="https://github.com/sunildivyam/Project-Viewer" target="_blank">Project Viewer and its all Projects' Source Code</a> and contibute to the Project.
+<pre>
+Step 1: Add a folder under "subprojects/etc" for Script files
+	For Example: For creating a Project "myProject"
+		-- subProjects
+			-- etc
+				-- myProject
+					-- your own sub folder structure
+
+Step 2: Add s folder under "subprojects/pages" for all markup (templates, html etc.) files
+	For Example: For creating a Project "myProject"
+		-- subProjects
+			-- pages
+				-- myProject
+					-- your own sub folder structure
+
+Step 3: inject "your project module name" into the pvApp module in the base.js file
+
+Step 4: Add a landing state in the pvApp modules config in the base.js file
+
+Step 5: Add a Navigation Item in main navigation in the index.html
+
+Step 6: add references of all JS files you create, in index.html of root of the project using &lt;script&gt; tag
+
+Step 7: Start creating your module config, states, controllers, pages, templates, services etc. 
+</pre>
+
+<h2>HAPPY ANGULAR PROGRAMMING</h2>

@@ -59,6 +59,14 @@ angular.module('ui.router.stateHelper', [ 'ui.router' ])
             return self;
         };
 
+        this.createStates = function(states) {
+            if (states !==undefined && states!==null && states.length) {
+                states.forEach(function(state, index) {
+                    self.state(state);
+                });
+            }
+        };
+
         this.setNestedState = this.state;
 
         self.$get = angular.noop;
@@ -84,11 +92,5 @@ angular.module('ui.router.stateHelper', [ 'ui.router' ])
             });
         }
 
-        this.createStates = function(states) {
-            if (states !==undefined && states!==null && states.length) {
-                states.forEach(function(state, index) {
-                    this.state(state);
-                });
-            }
-        }
+        
     }]);

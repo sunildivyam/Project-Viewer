@@ -19,7 +19,7 @@ body {
 		max-width: 150px;
 		padding: 0px 10px;
 
-		color: white;
+		color: #ffffff;			
 		text-decoration: none;
 		font-size: 14px;		
 		vertical-align: middle;
@@ -32,12 +32,17 @@ body {
 		overflow: hidden;
 
 		&:hover {
-			background: linear-gradient(to bottom, #FF8500, #E85600);			
+			background: linear-gradient(to bottom, #FF8500, #E85600);
+			color: #ffffff;			
 		}
 		&:active, &.active {
-			background: linear-gradient(to bottom, #FF8500, #E85600);			
+			background: linear-gradient(to bottom, #FF8500, #E85600);
+			color: #ffffff;						
 		}
-
+		&:visited {
+			color: #ffffff;			
+		}
+		
 		&.logo {
 			font-size: 26px;
 			max-width: 300px;
@@ -73,8 +78,22 @@ body {
 	padding: 10px;
 
 	width: 100%;
-	height: 10px;
+	height: auto;
 	min-height: 520px;
 
 	background: linear-gradient(to bottom, #e85600 5px, #ffffff 10px,#ffffff);
+}
+
+pre {
+    font-family: "arial narrow";
+    font-size: 20px;
+    font-weight: bold;
+    color: #4D9600;	
+}
+
+a,a:active, a:visited {
+	color: #0087FF;
+}
+a:hover {
+	color:#FF5F00;
 }
