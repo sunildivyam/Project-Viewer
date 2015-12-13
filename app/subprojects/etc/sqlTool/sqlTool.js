@@ -14,7 +14,8 @@ angular.module('pvApp.sqlTool', [
 	{
 		name: 'sqltool.tables',
 		url: '/tables?dbid&tableid',
-		templateUrl: "subprojects/pages/sqlTool/tables.html"
+		templateUrl: "subprojects/pages/sqlTool/tables.html",
+		controller: 'tablesController'
 	},{
 		name: 'sqltool.state2',
 		url: '/state2',
@@ -25,6 +26,10 @@ angular.module('pvApp.sqlTool', [
 .run(["$rootScope", "$state", "$stateParams", "$templateCache","$templateRequest",  function($rootScope, $state, $stateParams, $templateCache,$templateRequest) {
 	$templateRequest('subprojects/pages/sqlTool/sql-table.html').then(function(response) {
 		$templateCache.put('sql-table.html', response);
+	});
+
+	$templateRequest('subprojects/pages/sqlTool/tables-list.html').then(function(response) {
+		$templateCache.put('tables-list.html', response);
 	});
 
 	$rootScope.$state = $state;

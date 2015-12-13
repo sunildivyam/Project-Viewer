@@ -1,0 +1,67 @@
+.tinyscrollbar
+{
+    width:80%;
+    margin:20px auto 10px;
+    position: relative;
+
+    .viewport
+    {
+        height: 100px;
+        overflow:hidden;
+        position:relative;
+        background: #dedede;
+    }
+    .overview
+    {
+        list-style:none;
+        position:absolute;
+        left:0;
+        top:0;
+        margin:0;
+        padding: 10px 20px;
+    }
+
+    .scrollbar
+    {
+        background:transparent url(/app/images/tinyscrollbar/bg-scrollbar-track-y.png) no-repeat 0 0;
+        position:absolute;
+        background-position:0 0;
+        right: -20px;
+        top:0;
+        width:15px;
+
+        .track
+        {
+            background:transparent url(/app/images/tinyscrollbar/bg-scrollbar-trackend-y.png) no-repeat 0 100%;
+            height:100%;
+            width:13px;
+            position:relative;
+            padding:0 1px;
+
+            .thumb
+            {
+                background:transparent url(/app/images/tinyscrollbar/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+                height:5px;
+                width:25px;
+                cursor:pointer;
+                overflow:hidden;
+                position:absolute;
+                top:0;
+                left:-5px;
+
+                .end
+                {
+                    background:transparent url(/app/images/tinyscrollbar/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+                    overflow:hidden;
+                    height:5px;
+                    width:25px;
+                }
+            }
+        }
+    }
+
+    .disable
+    {
+        display:none;
+    }
+}
