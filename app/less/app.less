@@ -1,3 +1,9 @@
+@import "_variables.less";
+@import "mixins/_mixins.less";
+@import "mixins/_app_mixins.less";
+@import "_general.less";
+@import "_sqltool.less";
+
 body {
 	min-width: 720px;
 
@@ -6,47 +12,44 @@ body {
 	}
 }
 .main-menu {
-	display: block;	
+	display: block;
 	height: 40px;
-	padding: 0px;	
+	padding: 0px;
 	margin: 0px;
-	background: linear-gradient(to right, #292929, #4C4C4C);
-	
-	a {
+
+	.horizontal-gradient(@main-menu-stop1-color, @main-menu-stop2-color);
+
+	a, a:visited {
 		display: inline-block;
 		float: left;
 		height: 40px;
 		max-width: 150px;
 		padding: 0px 10px;
 
-		color: #ffffff;			
+		color: @body-text-color;
 		text-decoration: none;
-		font-size: 14px;		
+		font-size: 14px;
 		vertical-align: middle;
 		text-align: center;
 		line-height: 40px;
-		background: linear-gradient(to right, #292929, #4C4C4C);
 
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-
-		&:hover {
-			background: linear-gradient(to bottom, #FF8500, #E85600);
-			color: #ffffff;			
+		.horizontal-gradient(@main-menu-stop1-color, @main-menu-stop2-color);
+		.text-ellipsis;
+		.transition(color 1s);
+		.noselect;
+		&:hover, &.hover {
+			.gradient(@main-menu-stop1-selected-color, @main-menu-stop2-selected-color);
+			color: @link-active-color;
 		}
 		&:active, &.active {
-			background: linear-gradient(to bottom, #FF8500, #E85600);
-			color: #ffffff;						
+			.gradient(@main-menu-stop1-selected-color, @main-menu-stop2-selected-color);
+			color: @link-active-color;
 		}
-		&:visited {
-			color: #ffffff;			
-		}
-		
+
 		&.logo {
 			font-size: 26px;
 			max-width: 300px;
-			color: #BDBDBD;
+			color: @body-text-greyed-color;
 			text-transform: uppercase;
 		}
 	}
@@ -61,11 +64,12 @@ body {
 	min-height: 100px;
 	padding: 10px;
 
-	background: #4C4C4C;
-	color: #ffffff;
+	color: @body-text-color;
 	font-size: 10px;
 	text-align: center;
-	
+
+	background: @main-menu-stop1-color;
+
 	&>span {
 		display: block;
 	}
@@ -75,25 +79,59 @@ body {
 	display: block;
 	float: left;
 	margin: 0px;
-	padding: 10px;
+	padding: 0px;
 
 	width: 100%;
 	height: auto;
 	min-height: 520px;
 
-	background: linear-gradient(to bottom, #e85600 5px, #ffffff 10px,#ffffff);
+	.gradient-3stops(@main-menu-stop2-selected-color 5px, @body-bg-color 10px, @body-bg-color)
 }
 
-pre {
-    font-family: "arial narrow";
-    font-size: 20px;
-    font-weight: bold;
-    color: #4D9600;	
-}
+.main-sub-menu {
+	display: block;
+	height: 30px;
+	padding: 0px 10px;
+	margin: 0px;
 
-a,a:active, a:visited {
-	color: #0087FF;
-}
-a:hover {
-	color:#FF5F00;
+	border-bottom: 3px solid @main-menu-stop2-selected-color;
+
+	.gradient(@main-menu-stop2-selected-color, @main-menu-stop1-selected-color);
+
+	a, a:visited {
+		display: inline-block;
+		float: left;
+		height: 30px;
+		max-width: 150px;
+		padding: 0px 20px;
+
+		color: @body-text-color;
+		text-decoration: none;
+		font-size: 12px;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 30px;
+		border-bottom: 3px solid @main-menu-stop2-selected-color;
+		border-left: 1px solid @main-menu-stop2-selected-color;
+
+		.gradient(@main-menu-stop2-selected-color, @main-menu-stop1-selected-color);
+		.text-ellipsis;
+		.noselect;
+		&:hover {
+			.gradient(@main-menu-stop2-selected-color, @body-bg-color  12px);
+			color: @link-active-color;
+			border-bottom: 3px solid @body-bg-color;
+			.transition(color 1s);
+		}
+		&:active, &.active {
+			.gradient(@main-menu-stop2-selected-color, @body-bg-color 12px);
+			color: @link-active-color;
+			border-bottom: 3px solid @body-bg-color;
+		}
+
+		&:last-child {
+			border-right: 1px solid @main-menu-stop2-selected-color;
+		}
+	}
+
 }
