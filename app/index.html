@@ -18,31 +18,31 @@
 <body ng-controller="appController">
     <nav class="main-menu">
       <a ui-sref="home" class="logo">Project Viewer</a>
-      <a ui-sref="sqltool">SQL Tool</a>
+      <a ui-sref="sqltool" ui-sref-active="active">SQL Tool</a>
     </nav>
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container" ui-view=""></div>    
+    <div class="container" ui-view=""></div>
 
 <footer class="main-footer">
   <span>Project Viewer Application</span>
   <span>
     <b>Contributors: </b> Sunil Kumar
   </span>
-</footer>  
+</footer>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
 
-  <script src="bower_components/angular/angular.min.js"></script>  
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>  
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
  <script src="bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
- <!-- Angular Templates -->
-  <script type="text/ng-template" id="home.html" src="subprojects/pages/base/landing.html"></script> 
-  <script type="text/ng-template" id="sql-tool.html" src="subprojects/pages/sqlTool/landing.html"></script> 
-<!-- *******-->
+
+ <!-- Angular Templates
+  <script type="text/ng-template" id="sql-table.html" src="subprojects/pages/sqlTool/sql-table.html"></script>
+*******-->
 
 
   <script src="subprojects/etc/base/base.js"></script>
@@ -50,6 +50,7 @@
   <script src="subprojects/etc/base/controllers/homeController.js"></script>
 
   <script src="subprojects/etc/sqlTool/sqlTool.js"></script>
+  <script src="subprojects/etc/sqlTool/directives/sqlTable.js"></script>
   <script src="subprojects/etc/sqlTool/controllers/sqlToolController.js"></script>
 
 

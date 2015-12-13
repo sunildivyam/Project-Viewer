@@ -1,1 +1,10 @@
-<h1>SQL Tool Landing Page</h1>
+<nav class="main-sub-menu">
+	<a ui-sref="sqltool" ng-class="{'active':$state.$current.name==='sqltool'}">Overview</a>
+	<a ui-sref="sqltool.tables" ui-sref-active="active">SQL Tables</a>
+	<a ui-sref="sqltool.state2" ui-sref-active="active">State 2</a>
+</nav>
+<div class="overview" ng-if="$state.$current.name==='sqltool'">
+	<h1>This is SQL Tool Overview</h1>
+</div>
+<div ui-view=""></div>
+

@@ -18,7 +18,7 @@ angular.module("pvApp", [
 ])
 
 .config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
-	
+
 	stateHelperProvider.createStates([
 	{
 		name: 'home',
@@ -33,7 +33,11 @@ angular.module("pvApp", [
 	}]);
 }])
 
-.run(["$rootScope", "$state", "$stateParams", function($rootScope, $state, $stateParams) {
+.run(["$rootScope", "$state", "$stateParams", "$templateCache","$templateRequest",  function($rootScope, $state, $stateParams, $templateCache,$templateRequest) {
+	// $templateRequest('subprojects/pages/base/landing.html').then(function(response) {
+	// 	$templateCache.put('home.html', response);
+	// });
+
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
 }]);

@@ -1,0 +1,10 @@
+asas
+<h1 ng-bind="table.name"></h1>
+<table>
+	<tr><td>S.No.</td><td>Column Name</td><td>Data Type</td></tr>
+	<tr ng-repeat="column in table.columns">
+		<td ng-bind="$index + 1"></td>
+		<td ng-bind="column.name"></td>
+		<td ng-bind="column.dataType"></td>
+	</tr>
+</table>
