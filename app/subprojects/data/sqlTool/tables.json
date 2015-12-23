@@ -1,0 +1,128 @@
+[
+	{
+		"id"			: "1",
+		"name"			: "courses",
+		"databaseId"	: "1",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	},
+	{
+		"id"			: "2",
+		"name"			: "modules",
+		"databaseId"	: "1",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	},
+	{
+		"id"			: "3",
+		"name"			: "programs",
+		"databaseId"	: "1",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	},
+	{
+		"id"			: "1",
+		"name"			: "courses",
+		"databaseId"	: "2",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	},
+	{
+		"id"			: "2",
+		"name"			: "modules",
+		"databaseId"	: "2",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	},
+	{
+		"id"			: "3",
+		"name"			: "programs",
+		"databaseId"	: "2",
+		"columns"		: [
+			{
+				"id"			: "1",
+				"name"			: "id",
+				"description"	: "Course Unique ID",
+				"dataType"		: "numeric",
+				"primaryKey"	: true
+			},
+			{
+				"id"			: "2",
+				"name"			: "name",
+				"description"	: "Course Name",
+				"dataType"		: "varChar",
+				"primaryKey"	: false
+			}
+		]
+	}
+]

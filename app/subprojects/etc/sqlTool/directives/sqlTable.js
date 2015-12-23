@@ -9,7 +9,7 @@ angular.module('pvApp.sqlTool.directives')
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
-		templateUrl: 'sql-table.html',
+		templateUrl: 'subprojects/pages/sqlTool/sql-table.html',
 		// templateUrl: '',
 		// replace: true,
 		// transclude: true,

@@ -6,5 +6,12 @@
 <div class="overview" ng-if="$state.$current.name==='sqltool'">
 	<h1>This is SQL Tool Overview</h1>
 </div>
+
+<div class="databases-list">
+	<h4>Available Databases</h4>
+	<ul>
+		<li ng-repeat = "db in currentDatabases">{{db.name}}</li>
+	</ul>
+</div>
 <div ui-view=""></div>
 

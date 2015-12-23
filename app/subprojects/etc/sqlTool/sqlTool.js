@@ -23,14 +23,14 @@ angular.module('pvApp.sqlTool', [
 	}]);
 }])
 
-.run(["$rootScope", "$state", "$stateParams", "$templateCache","$templateRequest",  function($rootScope, $state, $stateParams, $templateCache,$templateRequest) {
-	$templateRequest('subprojects/pages/sqlTool/sql-table.html').then(function(response) {
-		$templateCache.put('sql-table.html', response);
-	});
+.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
+	// $templateRequest('subprojects/pages/sqlTool/sql-table.html').then(function(response) {
+	// 	$templateCache.put('sql-table.html', response);
+	// });
 
-	$templateRequest('subprojects/pages/sqlTool/tables-list.html').then(function(response) {
-		$templateCache.put('tables-list.html', response);
-	});
+	// $templateRequest('subprojects/pages/sqlTool/tables-list.html').then(function(response) {
+	// 	$templateCache.put('tables-list.html', response);
+	// });
 
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;

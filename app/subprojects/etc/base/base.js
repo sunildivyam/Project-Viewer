@@ -33,7 +33,7 @@ angular.module("pvApp", [
 	}]);
 }])
 
-.run(["$rootScope", "$state", "$stateParams", "$templateCache","$templateRequest",  function($rootScope, $state, $stateParams, $templateCache,$templateRequest) {
+.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
 	// $templateRequest('subprojects/pages/base/landing.html').then(function(response) {
 	// 	$templateCache.put('home.html', response);
 	// });
