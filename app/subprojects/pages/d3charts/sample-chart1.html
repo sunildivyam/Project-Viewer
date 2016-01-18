@@ -1,0 +1,15 @@
+<h2>Sample Chart 1</h1>
+<div>
+	<table border="1" width="90%">
+		<tr>
+			<th>Name</th>
+			<th>value</th>
+		</tr>
+		<tr ng-repeat="item in data">
+			<td>{{item.name}}</td>
+			<td><input type="text" ng-model=item.score></td>
+		</tr>
+	</table>
+</div>
+<div class="chart-container"></div>
+

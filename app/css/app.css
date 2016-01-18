@@ -81,6 +81,13 @@ a:hover {
 .tinyscrollbar .disable {
   display: none;
 }
+sample-chart1 {
+  vertical-align: top;
+}
+sample-chart1 > div {
+  display: inline-block;
+  width: 500px;
+}
 body {
   min-width: 720px;
 }
