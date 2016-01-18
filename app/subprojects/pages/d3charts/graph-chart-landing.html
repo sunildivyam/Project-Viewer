@@ -1,0 +1,7 @@
+<ul>
+	<li ng-repeat="category in graphCategories">
+		<a href="" ng-click="selectCategory($event, category.id)">{{category.label}}</a>
+	</li>
+</ul>
+<graph-chart class="graph-chart"></graph-chart>
+

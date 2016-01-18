@@ -12,10 +12,10 @@ angular.module('pvApp.d3charts', [
 
 	stateHelperProvider.createStates([
 	{
-		name: 'd3charts.chart1',
-		url: '/chart1',
-		templateUrl: "subprojects/pages/d3charts/chart1.html",
-		controller: 'chart1Controller'
+		name: 'd3charts.graphchart',
+		url: '/graphchart',
+		templateUrl: "subprojects/pages/d3charts/graph-chart-landing.html",
+		controller: 'graphChartController'
 	},{
 		name: 'd3charts.chart2',
 		url: '/chart2',

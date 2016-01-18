@@ -1,12 +1,10 @@
 <nav class="main-sub-menu">
 	<a ui-sref="d3charts" ng-class="{'active':$state.$current.name==='d3charts'}">Overview</a>
-	<a ui-sref="d3charts.chart1" ui-sref-active="active">Chart 1</a>
+	<a ui-sref="d3charts.graphchart" ui-sref-active="active">Graph Chart</a>
 	<a ui-sref="d3charts.chart2" ui-sref-active="active">Chart 2</a>
 </nav>
 <div class="overview" ng-if="$state.$current.name==='d3charts'">
 	<h1>This is Angular D3 Charts Overview</h1>
+	<sample-chart1 bar-height='40'></sample-chart1>
 </div>
-
-<sample-chart1 bar-height='40'></sample-chart1>
-
 <div ui-view=""></div>
