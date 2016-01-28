@@ -1,12 +1,78 @@
 angular.module('pvApp.d3charts.controllers')
-.controller('graphChartController', ['$scope', 'd3chartsService', function($scope, d3chartsService){
-	d3chartsService.getGraphData().then (function(response) {
-		$scope.graphCategories = response.data.categories;
-		$scope.graphData = response.data.data;
+.controller('graphChartController', ['$scope', 'd3graphService', 'd3graphFactory', 'd3LexService', function($scope, d3graphService, d3graphFactory, d3LexService){
+	$scope.currentNode = undefined;
+
+	d3graphService.getGraphCategories().then (function(response) {
+		$scope.graphCategories = response.data;
+
+		// to create Dummy data
+		//console.log(JSON.stringify(d3graphFactory.createVertexData(80,$scope.graphCategories,3)));
+		/////////////////
+	});
+	// d3graphService.getAllNodeVerticesAndEdgesData().then (function(response) {
+	// 	$scope.graphData = response.data;
+	// });
+	$scope.getCategoryColorCode = function(category) {
+		function intToRGB(i){
+		    var c = (i & 0x00FFFFFF)
+		        .toString(16)
+		        .toUpperCase();
+
+		    return "00000".substring(0, 6 - c.length) + c;
+		}
+		return "#" + intToRGB(category.id*234435);
+	}
+
+	$scope.selectCategory = function(event,category) {
+		$scope.currentCategory = category;
+		//$scope.moveCategoryToTop($scope.graphCategories, category);
+	};
+
+	$scope.getCategoryByName = function(name) {
+		var foundCategories= $scope.graphCategories.filter(function(category,index) {
+			return category.label===name;
+		});
+
+		if (foundCategories!==undefined && foundCategories.length) {
+			return foundCategories[0];
+		} else {
+			return undefined;
+		}
+	};
+
+	$scope.moveCategoryToTop = function(categories, categoryToMove) {
+		$scope.currentCategory = categoryToMove;
+		var index = categories.indexOf(categoryToMove);
+		if (index<=0)
+			return;
+		categories.splice(index,1);
+		categories.splice(0,0,categoryToMove);
+	};
+
+	$scope.$watch('currentCategory', function(newValue, oldValue) {
+		if (newValue===undefined || newValue=== null) {
+			return;
+		}
+
+		d3graphService.getNodesByCategory(newValue).then(function(data) {
+			d3LexService.parseRawToGraph(data,true).then(function(graph) {
+				$scope.graphData = graph;
+				$scope.$emit('onGraphUpdate', graph);
+			});
+		});
 	});
 
-	$scope.selectCategory = function(event,id) {
+	$scope.$watch('currentNode', function(node) {
+		if (node===undefined || node=== null) {
+			return;
+		}
 
-	};
+		d3graphService.getChildrenOfNode(node).then(function(data) {
+			d3LexService.parseRawToGraph(data).then(function(graph) {
+				$scope.graphData = graph;
+				$scope.$emit('onGraphUpdate', graph);
+			});
+		});
+	});
 
 }]);

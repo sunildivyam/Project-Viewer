@@ -17,9 +17,10 @@ angular.module('pvApp.d3charts', [
 		templateUrl: "subprojects/pages/d3charts/graph-chart-landing.html",
 		controller: 'graphChartController'
 	},{
-		name: 'd3charts.chart2',
-		url: '/chart2',
-		templateUrl: "subprojects/pages/d3charts/chart2.html"
+		name: 'd3charts.forcechart',
+		url: '/forcechart',
+		templateUrl: "subprojects/pages/d3charts/force-chart-landing.html",
+		controller: 'forceChartController'
 	}]);
 }])
 

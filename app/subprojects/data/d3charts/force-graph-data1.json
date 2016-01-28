@@ -1,0 +1,58 @@
+{
+  "nodes":[
+    {"label":"USA","group":201},
+    {"label":"UK","group":201},
+    {"label":"INDIA","group":201},
+    {"label":"RUSSIA","group":201},
+    {"label":"Microsoft","group":202},
+    {"label":"Google","group":202},
+    {"label":"Sapient","group":202},
+    {"label":"Dell","group":202},
+    {"label":"Web","group":203},
+    {"label":"Mobile","group":203},
+    {"label":"Network","group":203},
+    {"label":"Data","group":203}
+  ],
+  "links":[
+    {"source":0,"target":4,"value":1},
+    {"source":0,"target":5,"value":1},
+    {"source":0,"target":6,"value":1},
+    {"source":0,"target":7,"value":1},
+
+    {"source":1,"target":4,"value":1},
+    {"source":1,"target":7,"value":1},
+
+    {"source":2,"target":6,"value":1},
+    {"source":2,"target":7,"value":1},
+
+    {"source":3,"target":7,"value":1},
+
+    {"source":4,"target":8,"value":1},
+    {"source":4,"target":9,"value":1},
+    {"source":4,"target":10,"value":1},
+    {"source":4,"target":11,"value":1},
+
+    {"source":5,"target":8,"value":1},
+    {"source":5,"target":11,"value":1},
+
+    {"source":6,"target":10,"value":1},
+    {"source":6,"target":9,"value":1},
+
+    {"source":7,"target":8,"value":1},
+    {"source":7,"target":9,"value":1}
+  ],
+  "originalNodes":[
+    {"label":"USA","group":201, "vertices": ["Microsoft", "Google"]},
+    {"label":"UK","group":201, "vertices": ["Sapient", "Dell"]},
+    {"label":"INDIA","group":201, "vertices": ["Dell", "Microsoft"]},
+    {"label":"RUSSIA","group":201, "vertices": ["Microsoft", "Sapient"]},
+    {"label":"Microsoft","group":202},
+    {"label":"Google","group":202},
+    {"label":"Sapient","group":202},
+    {"label":"Dell","group":202},
+    {"label":"Web","group":203},
+    {"label":"Mobile","group":203},
+    {"label":"Network","group":203},
+    {"label":"Data","group":203}
+  ]
+}

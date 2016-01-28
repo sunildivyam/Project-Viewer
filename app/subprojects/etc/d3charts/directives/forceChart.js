@@ -1,31 +1,29 @@
 angular.module('pvApp.d3charts.directives')
-    .directive('graphChart', [function() {
+    .directive('forceChart', [function() {
     	var force, color;
 
     	function initGraph(config) {
     		force = d3.layout.force()
                 .charge(-1000)
-                .gravity(0.15)
-                .linkDistance(200)
+                .gravity(0.05)
+                .linkDistance(150)
                 .size([config.width, config.height]);
             color = d3.scale.category20();
     	}
 
-        function renderForceGraph(svg, data, config, scope, clearBeforePaint, forceStart) {
+        function renderForceGraph(svg, data, config, clearBeforePaint, forceStart) {
             if (clearBeforePaint===true) {
             	svg.selectAll('*')
                 .remove();
             }
 
-            // else {
-            // 	var prevNodes = force.nodes() || [],
-	           //  	prevLinks = force.links() || [];
-	           //  data.data =prevNodes.concat(data.data);
-	           //  data.edges=prevLinks.concat(data.edges);
-            // }
+            var prevNodes = force.nodes() || [],
+            	prevLinks = force.links() || [];
+            data.nodes =prevNodes.concat(data.nodes);
+            data.links=prevLinks.concat(data.links);
 
             force.nodes(data.nodes)
-                .links(data.edges);
+                .links(data.links);
             if (forceStart===true) {
             	force.start();
             } else{
@@ -33,7 +31,7 @@ angular.module('pvApp.d3charts.directives')
             }
 
             var link = svg.selectAll('.link')
-                .data(data.edges)
+                .data(data.links)
                 .enter()
                 .append('line')
                 .attr('class', 'link')
@@ -46,9 +44,14 @@ angular.module('pvApp.d3charts.directives')
                 .attr('class', 'node')
                 .attr('r', config.radius)
                 .style('fill', function(d) {
-                    return scope.getCategoryColorCode(scope.getCategoryByName(d.label));
+                    if (d.group) {
+						return color(d.group);
+                    }else if(d.category && d.category.id) {
+                    	return color(d.category.id*50);
+                    } else {
+                    	return color(100);
+                    }
                 })
-                .on("dblclick", nodeDblclick)
                 .call(force.drag);
 
             var text = svg.selectAll('.node-text')
@@ -59,7 +62,7 @@ angular.module('pvApp.d3charts.directives')
                 .attr('x', -(config.radius) / 2)
                 .attr('y', 0)
                 .text(function(d) {
-                    return d.properties.person_name;
+                    return d.label;
                 });
             var marker = svg.selectAll("marker")
                 .data(["suit", "licensing", "resolved"])
@@ -76,40 +79,28 @@ angular.module('pvApp.d3charts.directives')
                 .append("path")
                 .attr("d", "M-" + config.arrowSize + ",-" + config.arrowSize + ' L ' + config.arrowSize + ",0 L -" + config.arrowSize + ',' + config.arrowSize + " Z");
             force.on('tick', function() {
-	            link.attr('x1', function(d) {
-	                    return d.source.x;
-	                })
-	                .attr('y1', function(d) {
-	                    return d.source.y;
-	                })
-	                .attr('x2', function(d) {
-	                    return d.target.x;
-	                })
-	                .attr('y2', function(d) {
-	                    return d.target.y;
-	                });
-	            node.attr('cx', function(d) {
-	                    return d.x;
-	                })
-	                .attr('cy', function(d) {
-	                    return d.y;
-	                });
-	            text.attr("transform", function(d) {
-	                return "translate(" + d.x + "," + d.y + ")";
-	            });
+                link.attr('x1', function(d) {
+                        return d.source.x;
+                    })
+                    .attr('y1', function(d) {
+                        return d.source.y;
+                    })
+                    .attr('x2', function(d) {
+                        return d.target.x;
+                    })
+                    .attr('y2', function(d) {
+                        return d.target.y;
+                    });
+                node.attr('cx', function(d) {
+                        return d.x;
+                    })
+                    .attr('cy', function(d) {
+                        return d.y;
+                    });
+                text.attr("transform", function(d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
             });
-
-            var drag = force.drag()
-    			.on("dragstart", dragstart);
-			function dragstart(d) {
-			  d3.select(this).classed("fixed", d.fixed = true);
-			}
-
-			function nodeDblclick(d) {
-				//d3.select(this).style('fill', '#ff0000');
-				scope.currentNode = d;
-				scope.$apply();
-			}
         }
         return {
             // name: '',
@@ -120,7 +111,7 @@ angular.module('pvApp.d3charts.directives')
             // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
             restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
             // template: '',
-            templateUrl: 'subprojects/pages/d3charts/graph-chart.html',
+            templateUrl: 'subprojects/pages/d3charts/force-chart.html',
             // replace: true,
             // transclude: true,
             // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
@@ -132,8 +123,8 @@ angular.module('pvApp.d3charts.directives')
                     nodeSize: parseInt(attrs.nodeSize) || 150,
                     width: parseInt(attrs.width) || 1400,
                     height: parseInt(attrs.height) || 550,
-                    radius: parseInt(attrs.radius) || 40,
-                    arrowSize: parseInt(attrs.arrowSize) || 5
+                    radius: parseInt(attrs.radius) || 50,
+                    arrowSize: parseInt(attrs.arrowSize) || 10
                 };
                 var $element = $(element),
                     $svg = d3.select(element[0]).select('.chart-container')
@@ -142,14 +133,14 @@ angular.module('pvApp.d3charts.directives')
                     .attr('height', config.height);
 
                 initGraph(config);
-                $scope.$on('onGraphUpdate', function(event,data) {
+                $scope.$watch('forceGraphData', function(data) {
                     if (!data) return;
-                    renderForceGraph($svg, data, config, $scope, true, true);
+                    renderForceGraph($svg, data, config, true, true);
                 });
 
                 $scope.$on('onNodesAdd', function(event, data){
                 	if (!data) return;
-                    renderForceGraph($svg, data, config, $scope, false, true);
+                    renderForceGraph($svg, data, config, false, true);
                 });
             }
         };

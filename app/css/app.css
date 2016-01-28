@@ -88,6 +88,48 @@ sample-chart1 > div {
   display: inline-block;
   width: 500px;
 }
+.d3charts-page ul.categories {
+  list-style: none;
+  display: block;
+}
+.d3charts-page ul.categories li.category {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  background: lightgrey;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.d3charts-page ul.categories li.category a,
+.d3charts-page ul.categories li.category a:visited,
+.d3charts-page ul.categories li.category a:active {
+  text-decoration: none;
+  color: black;
+}
+.d3charts-page ul.categories li.category:hover {
+  background: grey;
+  color: white;
+}
+.d3charts-page .force-chart .link,
+.d3charts-page .graph-chart .link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+.d3charts-page .force-chart .node,
+.d3charts-page .graph-chart .node {
+  stroke: grey;
+  stroke-width: 1.5;
+  stroke-opacity: .3;
+  cursor: pointer;
+}
+.d3charts-page .force-chart .node-text,
+.d3charts-page .graph-chart .node-text {
+  max-width: 50px;
+  overflow: hidden;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
 body {
   min-width: 720px;
 }

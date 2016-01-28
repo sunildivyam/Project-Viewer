@@ -1,0 +1,8 @@
+<div class="d3charts-page">
+	<ul class="categories">
+		<li ng-repeat="category in graphCategories" class="category" ng-click="selectCategory($event, category)">
+			<a href="" >{{category.label}}</a>
+		</li>
+	</ul>
+	<force-chart class="force-chart"></force-chart>
+</div>

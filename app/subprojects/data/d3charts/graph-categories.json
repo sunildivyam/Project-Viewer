@@ -1,0 +1,14 @@
+[
+	{
+		"id"		: 1,
+		"label"		: "company"
+	},
+	{
+		"id"		: 2,
+		"label"		: "geography"
+	},
+	{
+		"id"		: 3,
+		"label"		: "technology"
+	}
+]

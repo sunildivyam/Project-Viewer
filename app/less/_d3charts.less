@@ -6,3 +6,51 @@ sample-chart1 {
 		width: 500px;
 	}
 }
+
+.d3charts-page {
+	ul.categories {
+		list-style: none;
+		display: block;
+		li.category {
+			display: inline-block;
+			padding: 10px;
+			margin: 5px;
+			background: lightgrey;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+
+			a, a:visited,a:active {
+				text-decoration: none;
+				color: black;
+			}
+
+			&:hover {
+				background: grey;
+				color: white;
+			}
+		}
+	}
+
+	.force-chart, .graph-chart {
+		.link {
+			stroke: #999;
+			stroke-opacity: .6;
+		}
+
+		.node {
+			stroke: grey;
+			stroke-width: 1.5;
+			stroke-opacity: .3;
+			cursor: pointer;
+		}
+
+		.node-text {
+			max-width: 50px;
+			overflow: hidden;
+			font: 10px sans-serif;
+			pointer-events: none;
+			//text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+		}
+	}
+}

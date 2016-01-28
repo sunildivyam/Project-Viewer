@@ -1,0 +1,735 @@
+{
+    "requestId": "a64e06c2-2c1b-4db1-841f-a8d54d8e15fd",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data": [
+        {
+            "id": 880680,
+            "label": "person",
+            "type": "vertex",
+            "properties":             {
+                "person_emailId": [                {
+                    "id": "1241x-ivjc-4qt",
+                    "value": "barbara.clancey@ipgdirect.com"
+                }],
+                "person_salary": [                {
+                    "id": "125mt-ivjc-6bp",
+                    "value": "54000.0"
+                }],
+                "person_department": [                {
+                    "id": "1258l-ivjc-f0l",
+                    "value": "DEVELOPMENT"
+                }],
+                "person_age": [                {
+                    "id": "124ud-ivjc-7wl",
+                    "value": "44"
+                }],
+                "person_isInternal": [                {
+                    "id": "124g5-ivjc-9hh",
+                    "value": "false"
+                }]
+            }
+        }
+        ],
+        "meta": {}
+    }
+}
+
+{
+    "requestId": "58a71a76-c0e8-4dae-b84a-1a827c10918e",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data": [        {
+            "id": 880680,
+            "label": "person",
+            "type": "vertex",
+            "properties":             {
+                "person_emailId": [                {
+                    "id": "1241x-ivjc-4qt",
+                    "value": "barbara.clancey@ipgdirect.com"
+                }],
+                "person_salary": [                {
+                    "id": "125mt-ivjc-6bp",
+                    "value": "54000.0"
+                }],
+                "person_department": [                {
+                    "id": "1258l-ivjc-f0l",
+                    "value": "DEVELOPMENT"
+                }],
+                "person_age": [                {
+                    "id": "124ud-ivjc-7wl",
+                    "value": "44"
+                }],
+                "person_isInternal": [                {
+                    "id": "124g5-ivjc-9hh",
+                    "value": "false"
+                }]
+            }
+        }],
+        "meta": {}
+    }
+}
+
+{
+    "requestId": "e88c0bc4-b763-4bae-83a1-dc6146e87e6c",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data":[
+        {
+                "id": "126f9-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":  {
+                    "Date": "02-13-2001 14:10:00 +0530",
+                    "ccBcc": "TO",
+                    "email_messageId": "802872"
+                }
+        },
+                        {
+                "id": "1d72d-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "Date": "01-23-2001 15:12:00 +0530",
+                    "email_messageId": "1044680",
+                    "ccBcc": "TO"
+                }
+            },
+                        {
+                "id": "1jzlx-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "Date": "02-07-2001 20:24:00 +0530",
+                    "ccBcc": "TO",
+                    "email_messageId": "1368096"
+                }
+            },
+                        {
+                "id": "2beh1-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "email_messageId": "1847432",
+                    "Date": "02-07-2001 20:24:00 +0530",
+                    "ccBcc": "TO"
+                }
+            },
+                        {
+                "id": "2dj45-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "Date": "02-13-2001 14:10:00 +0530",
+                    "ccBcc": "TO",
+                    "email_messageId": "1851432"
+                }
+            },
+                        {
+                "id": "2z2md-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "email_messageId": "2076680",
+                    "ccBcc": "TO",
+                    "Date": "01-23-2001 15:12:00 +0530"
+                }
+            },
+                        {
+                "id": "3vi11-ivjc-2dx-35s",
+                "label": "EMAILS_TO",
+                "type": "edge",
+                "inVLabel": "person",
+                "outVLabel": "person",
+                "inV": 4096,
+                "outV": 880680,
+                "properties":                 {
+                    "ccBcc": "TO",
+                    "Date": "09-29-2001 01:37:16 +0530",
+                    "email_messageId": "3141872"
+                }
+            },
+                        {
+                "id": "12611-ivjc-3yt-h7i0",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 802872,
+                "outV": 880680,
+                "properties": {"Date": "02-13-2001 14:10:00 +0530"}
+            },
+                        {
+                "id": "1d6o5-ivjc-3yt-me2w",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 1044680,
+                "outV": 880680,
+                "properties": {"Date": "01-23-2001 15:12:00 +0530"}
+            },
+                        {
+                "id": "1jz7p-ivjc-3yt-tbmo",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 1368096,
+                "outV": 880680,
+                "properties": {"Date": "02-07-2001 20:24:00 +0530"}
+            },
+                        {
+                "id": "2be2t-ivjc-3yt-13lhk",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 1847432,
+                "outV": 880680,
+                "properties": {"Date": "02-07-2001 20:24:00 +0530"}
+            },
+                        {
+                "id": "2dipx-ivjc-3yt-13oko",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 1851432,
+                "outV": 880680,
+                "properties": {"Date": "02-13-2001 14:10:00 +0530"}
+            },
+                        {
+                "id": "2z285-ivjc-3yt-18idk",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 2076680,
+                "outV": 880680,
+                "properties": {"Date": "01-23-2001 15:12:00 +0530"}
+            },
+                        {
+                "id": "3vhmt-ivjc-3yt-1vca8",
+                "label": "SENDS_EMAIL",
+                "type": "edge",
+                "inVLabel": "email",
+                "outVLabel": "person",
+                "inV": 3141872,
+                "outV": 880680,
+                "properties": {"Date": "09-29-2001 01:37:16 +0530"}
+            }
+        ],
+        "meta": {}
+    }
+}
+
+{
+    "requestId": "9e1ae3a0-bad6-4d1a-b51f-63bd054daf78",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data": [],
+        "meta": {}
+    }
+}
+
+{
+    "requestId": "e2d3ea34-b637-4a4d-b6ea-2f730215dd40",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data":         [
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 4096,
+                "label": "person",
+                "type": "vertex",
+                "properties":                 {
+                    "person_emailId": [                    {
+                        "id": "2ry8-35s-4qt",
+                        "value": "don.baughman@enron.com"
+                    }],
+                    "person_salary": [                    {
+                        "id": "2tj4-35s-6bp",
+                        "value": "60000.0"
+                    }],
+                    "person_department": [                    {
+                        "id": "2t4w-35s-f0l",
+                        "value": "DEVELOPMENT"
+                    }],
+                    "person_age": [                    {
+                        "id": "2sqo-35s-7wl",
+                        "value": "31"
+                    }],
+                    "person_isInternal": [                    {
+                        "id": "2scg-35s-9hh",
+                        "value": "true"
+                    }]
+                }
+            },
+                        {
+                "id": 802872,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "q9s7-h7i0-cn9",
+                        "value": "4561531.1075848325362.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "qbrb-h7i0-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = EnronHr1                 (case sensitive)\n        Password = power                     (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n\n----- Original Message -----"
+                    }],
+                    "email_text": [                    {
+                        "id": "qbd3-h7i0-jr9",
+                        "value": "Message-ID: <4561531.1075848325362.JavaMail.evans@thyme>\nDate: Tue, 13 Feb 2001 00:40:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: Re: TradersNews Power Account\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <Don.Baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\Discussion threads\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = EnronHr1                 (case sensitive)\n        Password = power                     (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n\n----- Original Message -----\nFrom: <Don.Baughman@enron.com>\nTo: <barbara.clancey@ipgdirect.com>\nSent: Tuesday, February 13, 2001 7:36 AM\nSubject: Re: TradersNews Power Account\n\n\n>\n> Barbara,\n> I attempted to log on to Tradersnewspower.com this a.m. and met with some\n> difficulties, got the 'whoops' page.  Would you please look into the\n> password validity.\n>\n> Thank you so much for you help.\n>\n> Don Baughman\n> Enron Power Marketing, Inc.\n> (713) 853-0392\n>\n>\n>\n>\n>\n>\n> 'Barbara Clancey' <barbara.clancey@ipgdirect.com> on 02/07/2001 01:54:46\nPM\n>\n> To:   <don.baughman@enron.com>\n> cc:\n> Subject:  TradersNews Power Account\n>\n>\n>\n> Don,\n>\n> I have extended your trial to TradersNews Power  until February 28. You\n> may have to re-logon.\n>\n>\n> Please go to our home page at www.tradersnewspower.com. Click  on any\n> link. Scroll down to the logon box on the left and enter your  Username\n> and Password\n>\n> Username = EnronHr1   (case sensitive)\n> Password  = power (all  lower case)\n>\n> Hit enter.\n>\n> Please contact me if you have any  problems.\n>\n> Best Regards,\n>\n> Barbara Clancey\n> Customer Support Representative\n> Internet Publishing Group, Inc.\n> 215-504-4288 x222\n> barbara.clancey@ipgdirect.com\n>\n>\n>\n>\n>\n>\n>"
+                    }],
+                    "email_file": [                    {
+                        "id": "qakn-h7i0-i6d",
+                        "value": "156.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "qayv-h7i0-iyt",
+                        "value": "Re: TradersNews Power Account"
+                    }],
+                    "Date": [                    {
+                        "id": "qc5j-h7i0-lc5",
+                        "value": "02-13-2001 14:10:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "qa6f-h7i0-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\discussion_threads\\156.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 1044680,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "2fu3d-me2w-cn9",
+                        "value": "32809191.1075848323892.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "2fw2h-me2w-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n?\nI have?extended your trial toTradersNews Power  until February 2.? \n?\nYOU MUST FOLLOW THESE INSTRUCTIONS TO RE-ACTIVATE  YOUR ACCOUNT. \n?\nACCOUNT ACTIVATION INSTRUCTIONS:\n?\n1. Launch a web browser\n2. Go to our home page at? www.tradersnewspower.com\n3.?Click on any link\n4. Scroll down to the logon box on the left and  enter your Username and \nPassword\n???? \n??????? Username  =?EnronHr1????? ?? (case  sensitive)\n??????? Password  =??power?????????????  (case sensitive)\n?\n5.?Hit enter\n6. You will now access our news page.? Please  bookmark this page for future \nreference.\n?\nIf you have any questions, problems or comments,  please contact ?me.\n?\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com"
+                    }],
+                    "email_text": [                    {
+                        "id": "2fvo9-me2w-jr9",
+                        "value": "Message-ID: <32809191.1075848323892.JavaMail.evans@thyme>\nDate: Tue, 23 Jan 2001 01:42:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: TradersNews Power Account Activation\nMime-Version: 1.0\nContent-Type: text/plain; charset=ANSI_X3.4-1968\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <don.baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\Discussion threads\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n?\nI have?extended your trial toTradersNews Power  until February 2.? \n?\nYOU MUST FOLLOW THESE INSTRUCTIONS TO RE-ACTIVATE  YOUR ACCOUNT. \n?\nACCOUNT ACTIVATION INSTRUCTIONS:\n?\n1. Launch a web browser\n2. Go to our home page at? www.tradersnewspower.com\n3.?Click on any link\n4. Scroll down to the logon box on the left and  enter your Username and \nPassword\n???? \n??????? Username  =?EnronHr1????? ?? (case  sensitive)\n??????? Password  =??power?????????????  (case sensitive)\n?\n5.?Hit enter\n6. You will now access our news page.? Please  bookmark this page for future \nreference.\n?\nIf you have any questions, problems or comments,  please contact ?me.\n?\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com"
+                    }],
+                    "email_file": [                    {
+                        "id": "2fuvt-me2w-i6d",
+                        "value": "103.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "2fva1-me2w-iyt",
+                        "value": "TradersNews Power Account Activation"
+                    }],
+                    "Date": [                    {
+                        "id": "2fwgp-me2w-lc5",
+                        "value": "01-23-2001 15:12:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "2fuhl-me2w-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\discussion_threads\\103.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 1368096,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "1cuf8-tbmo-cn9",
+                        "value": "18879835.1075848324970.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "1cwec-tbmo-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n?\nI have extended your trial to TradersNews Power  until February 28.? You may \nhave to re-logon.? \n?\n\nPlease go to our home page at www.tradersnewspower.com. ?Click  on any link. \n?Scroll down to the logon box on the left and enter your  Username and \nPassword  \n?\n??????? Username =?EnronHr1????????????????  (case sensitive)\n??????? Password  =?power????? ??????????????? (all  lower case)\n?\nHit enter.\n\nPlease contact me if you have any  problems.\n\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n?"
+                    }],
+                    "email_text": [                    {
+                        "id": "1cw04-tbmo-jr9",
+                        "value": "Message-ID: <18879835.1075848324970.JavaMail.evans@thyme>\nDate: Wed, 7 Feb 2001 06:54:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: TradersNews Power Account\nMime-Version: 1.0\nContent-Type: text/plain; charset=ANSI_X3.4-1968\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <don.baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\Discussion threads\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n?\nI have extended your trial to TradersNews Power  until February 28.? You may \nhave to re-logon.? \n?\n\nPlease go to our home page at www.tradersnewspower.com. ?Click  on any link. \n?Scroll down to the logon box on the left and enter your  Username and \nPassword  \n?\n??????? Username =?EnronHr1????????????????  (case sensitive)\n??????? Password  =?power????? ??????????????? (all  lower case)\n?\nHit enter.\n\nPlease contact me if you have any  problems.\n\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n?"
+                    }],
+                    "email_file": [                    {
+                        "id": "1cv7o-tbmo-i6d",
+                        "value": "142.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "1cvlw-tbmo-iyt",
+                        "value": "TradersNews Power Account"
+                    }],
+                    "Date": [                    {
+                        "id": "1cwsk-tbmo-lc5",
+                        "value": "02-07-2001 20:24:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "1cutg-tbmo-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\discussion_threads\\142.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 1847432,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "23ymp-13lhk-cn9",
+                        "value": "23954402.1075848314019.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "240lt-13lhk-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n?\nI have extended your trial to TradersNews Power  until February 28.? You may \nhave to re-logon.? \n?\n\nPlease go to our home page at www.tradersnewspower.com. ?Click  on any link. \n?Scroll down to the logon box on the left and enter your  Username and \nPassword  \n?\n??????? Username =?EnronHr1????????????????  (case sensitive)\n??????? Password  =?power????? ??????????????? (all  lower case)\n?\nHit enter.\n\nPlease contact me if you have any  problems.\n\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n?"
+                    }],
+                    "email_text": [                    {
+                        "id": "2407l-13lhk-jr9",
+                        "value": "Message-ID: <23954402.1075848314019.JavaMail.evans@thyme>\nDate: Wed, 7 Feb 2001 06:54:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: TradersNews Power Account\nMime-Version: 1.0\nContent-Type: text/plain; charset=ANSI_X3.4-1968\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <don.baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\All documents\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n?\nI have extended your trial to TradersNews Power  until February 28.? You may \nhave to re-logon.? \n?\n\nPlease go to our home page at www.tradersnewspower.com. ?Click  on any link. \n?Scroll down to the logon box on the left and enter your  Username and \nPassword  \n?\n??????? Username =?EnronHr1????????????????  (case sensitive)\n??????? Password  =?power????? ??????????????? (all  lower case)\n?\nHit enter.\n\nPlease contact me if you have any  problems.\n\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n?"
+                    }],
+                    "email_file": [                    {
+                        "id": "23zf5-13lhk-i6d",
+                        "value": "143.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "23ztd-13lhk-iyt",
+                        "value": "TradersNews Power Account"
+                    }],
+                    "Date": [                    {
+                        "id": "24101-13lhk-lc5",
+                        "value": "02-07-2001 20:24:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "23z0x-13lhk-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\all_documents\\143.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 1851432,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "2dfyd-13oko-cn9",
+                        "value": "7624092.1075848314402.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "2dhxh-13oko-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = EnronHr1                 (case sensitive)\n        Password = power                     (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n\n----- Original Message -----"
+                    }],
+                    "email_text": [                    {
+                        "id": "2dhj9-13oko-jr9",
+                        "value": "Message-ID: <7624092.1075848314402.JavaMail.evans@thyme>\nDate: Tue, 13 Feb 2001 00:40:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: Re: TradersNews Power Account\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <Don.Baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\All documents\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = EnronHr1                 (case sensitive)\n        Password = power                     (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n\n----- Original Message -----\nFrom: <Don.Baughman@enron.com>\nTo: <barbara.clancey@ipgdirect.com>\nSent: Tuesday, February 13, 2001 7:36 AM\nSubject: Re: TradersNews Power Account\n\n\n>\n> Barbara,\n> I attempted to log on to Tradersnewspower.com this a.m. and met with some\n> difficulties, got the 'whoops' page.  Would you please look into the\n> password validity.\n>\n> Thank you so much for you help.\n>\n> Don Baughman\n> Enron Power Marketing, Inc.\n> (713) 853-0392\n>\n>\n>\n>\n>\n>\n> 'Barbara Clancey' <barbara.clancey@ipgdirect.com> on 02/07/2001 01:54:46\nPM\n>\n> To:   <don.baughman@enron.com>\n> cc:\n> Subject:  TradersNews Power Account\n>\n>\n>\n> Don,\n>\n> I have extended your trial to TradersNews Power  until February 28. You\n> may have to re-logon.\n>\n>\n> Please go to our home page at www.tradersnewspower.com. Click  on any\n> link. Scroll down to the logon box on the left and enter your  Username\n> and Password\n>\n> Username = EnronHr1   (case sensitive)\n> Password  = power (all  lower case)\n>\n> Hit enter.\n>\n> Please contact me if you have any  problems.\n>\n> Best Regards,\n>\n> Barbara Clancey\n> Customer Support Representative\n> Internet Publishing Group, Inc.\n> 215-504-4288 x222\n> barbara.clancey@ipgdirect.com\n>\n>\n>\n>\n>\n>\n>"
+                    }],
+                    "email_file": [                    {
+                        "id": "2dgqt-13oko-i6d",
+                        "value": "157.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "2dh51-13oko-iyt",
+                        "value": "Re: TradersNews Power Account"
+                    }],
+                    "Date": [                    {
+                        "id": "2dibp-13oko-lc5",
+                        "value": "02-13-2001 14:10:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "2dgcl-13oko-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\all_documents\\157.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 2076680,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "2acxt-18idk-cn9",
+                        "value": "32448906.1075848312934.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "2aewx-18idk-kjp",
+                        "value": " dbaughm.nsf\n\nDon,\n?\nI have?extended your trial toTradersNews Power  until February 2.? \n?\nYOU MUST FOLLOW THESE INSTRUCTIONS TO RE-ACTIVATE  YOUR ACCOUNT. \n?\nACCOUNT ACTIVATION INSTRUCTIONS:\n?\n1. Launch a web browser\n2. Go to our home page at? www.tradersnewspower.com\n3.?Click on any link\n4. Scroll down to the logon box on the left and  enter your Username and \nPassword\n???? \n??????? Username  =?EnronHr1????? ?? (case  sensitive)\n??????? Password  =??power?????????????  (case sensitive)\n?\n5.?Hit enter\n6. You will now access our news page.? Please  bookmark this page for future \nreference.\n?\nIf you have any questions, problems or comments,  please contact ?me.\n?\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com"
+                    }],
+                    "email_text": [                    {
+                        "id": "2aeip-18idk-jr9",
+                        "value": "Message-ID: <32448906.1075848312934.JavaMail.evans@thyme>\nDate: Tue, 23 Jan 2001 01:42:00 -0800 (PST)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: TradersNews Power Account Activation\nMime-Version: 1.0\nContent-Type: text/plain; charset=ANSI_X3.4-1968\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>\nX-To: <don.baughman@enron.com>\nX-cc: \nX-bcc: \nX-Folder: \\Edward_Baughman_Nov2001\\Notes Folders\\All documents\nX-Origin: BAUGHMAN-E\nX-FileName: dbaughm.nsf\n\nDon,\n?\nI have?extended your trial toTradersNews Power  until February 2.? \n?\nYOU MUST FOLLOW THESE INSTRUCTIONS TO RE-ACTIVATE  YOUR ACCOUNT. \n?\nACCOUNT ACTIVATION INSTRUCTIONS:\n?\n1. Launch a web browser\n2. Go to our home page at? www.tradersnewspower.com\n3.?Click on any link\n4. Scroll down to the logon box on the left and  enter your Username and \nPassword\n???? \n??????? Username  =?EnronHr1????? ?? (case  sensitive)\n??????? Password  =??power?????????????  (case sensitive)\n?\n5.?Hit enter\n6. You will now access our news page.? Please  bookmark this page for future \nreference.\n?\nIf you have any questions, problems or comments,  please contact ?me.\n?\nBest Regards,\n?\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com"
+                    }],
+                    "email_file": [                    {
+                        "id": "2adq9-18idk-i6d",
+                        "value": "104.txt"
+                    }],
+                    "email_subject": [                    {
+                        "id": "2ae4h-18idk-iyt",
+                        "value": "TradersNews Power Account Activation"
+                    }],
+                    "Date": [                    {
+                        "id": "2afb5-18idk-lc5",
+                        "value": "01-23-2001 15:12:00 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "2adc1-18idk-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\all_documents\\104.txt"
+                    }]
+                }
+            },
+                        {
+                "id": 3141872,
+                "label": "email",
+                "type": "vertex",
+                "properties":                 {
+                    "email_messageId": [                    {
+                        "id": "3dzj2-1vca8-cn9",
+                        "value": "32437185.1075840338412.JavaMail.evans@thyme"
+                    }],
+                    "email_emailText": [                    {
+                        "id": "3e1i6-1vca8-kjp",
+                        "value": " don baughman 6-25-02.PST\n\nDon,\n\nI have re-activated your account to TradersNews Energy.  You will have to\nre-logon.\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = enron        (all lower case)\n        Password = power        (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com\n\n\n"
+                    }],
+                    "email_text": [                    {
+                        "id": "3e13y-1vca8-jr9",
+                        "value": "Message-ID: <32437185.1075840338412.JavaMail.evans@thyme>\nDate: Fri, 28 Sep 2001 13:07:16 -0700 (PDT)\nFrom: barbara.clancey@ipgdirect.com\nTo: don.baughman@enron.com\nSubject: TradersNews Energy Account Activation\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\nX-From: 'Barbara Clancey' <barbara.clancey@ipgdirect.com>@ENRON <IMCEANOTES-+22Barbara+20Clancey+22+20+3Cbarbara+2Eclancey+40ipgdirect+2Ecom+3E+40ENRON@ENRON.com>\nX-To: Baughman Jr., Don <\/O=ENRON/OU=NA/CN=RECIPIENTS/CN=DBAUGHM>\nX-cc: \nX-bcc: \nX-Folder: \\ExMerge - Baughman Jr., Don\\Enron Power\\Cinergy Index\nX-Origin: BAUGHMAN-D\nX-FileName: don baughman 6-25-02.PST\n\nDon,\n\nI have re-activated your account to TradersNews Energy.  You will have to\nre-logon.\n\nPlease go to our home page at www.tradersnewspower.com.  Click on any link.\nScroll down to the logon box on the left and enter your Username and\nPassword\n\n        Username = enron        (all lower case)\n        Password = power        (all lower case)\n\nHit enter.\n\nPlease contact me if you have any problems.\n\nBest Regards,\n\nBarbara Clancey\nCustomer Support Representative\nInternet Publishing Group, Inc.\n215-504-4288 x222\nbarbara.clancey@ipgdirect.com"
+                    }],
+                    "email_file": [                    {
+                        "id": "3e0bi-1vca8-i6d",
+                        "value": "7"
+                    }],
+                    "email_subject": [                    {
+                        "id": "3e0pq-1vca8-iyt",
+                        "value": "TradersNews Energy Account Activation"
+                    }],
+                    "Date": [                    {
+                        "id": "3e1we-1vca8-lc5",
+                        "value": "09-29-2001 01:37:16 +0530"
+                    }],
+                    "email_path": [                    {
+                        "id": "3dzxa-1vca8-hdx",
+                        "value": "D:\\other-projects\\analytics-nlp\\enron-data\\DataSet\\enron_mail_20110402\\enron_mail_20110402\\maildir\\baughman-d\\enron_power\\cinergy_index\\7"
+                    }]
+                }
+            }
+        ],
+        "meta": {}
+    }
+}
+
+{
+    "requestId": "04d58971-ccc5-4384-b8d8-add7ed4eefe3",
+    "status":     {
+        "message": "",
+        "code": 200,
+        "attributes": {}
+    },
+    "result":     {
+        "data": [],
+        "meta": {}
+    }
+}

@@ -1,7 +1,8 @@
-<ul>
-	<li ng-repeat="category in graphCategories">
-		<a href="" ng-click="selectCategory($event, category.id)">{{category.label}}</a>
-	</li>
-</ul>
-<graph-chart class="graph-chart"></graph-chart>
-
+<div class="d3charts-page">
+	<ul class="categories">
+		<li ng-repeat="category in graphCategories" class="category" ng-click="selectCategory($event, category)" style="background: {{getCategoryColorCode(category)}}">
+			<a href="" >{{category.label}}</a>
+		</li>
+	</ul>
+	<graph-chart class="graph-chart"></graph-chart>
+</div>
