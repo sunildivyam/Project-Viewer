@@ -49,6 +49,8 @@ angular.module('pvApp.d3charts.directives')
                     return scope.getCategoryColorCode(scope.getCategoryByName(d.label));
                 })
                 .on("dblclick", nodeDblclick)
+                .on("mouseover", nodeOnMouseOver)
+                .on("mouseout", nodeOnMouseOut)
                 .call(force.drag);
 
             var text = svg.selectAll('.node-text')
@@ -75,6 +77,20 @@ angular.module('pvApp.d3charts.directives')
                 .attr("orient", "auto")
                 .append("path")
                 .attr("d", "M-" + config.arrowSize + ",-" + config.arrowSize + ' L ' + config.arrowSize + ",0 L -" + config.arrowSize + ',' + config.arrowSize + " Z");
+            //Set up tooltip
+			var tip = d3.tip()
+			    .attr('class', 'd3-tip')
+			    .offset([-10, 0])
+			    .html(function (d) {
+			    	var html = [
+			    	'<h3>Node Information</h3>',
+			    	'<div class="category">' + d.label + '</div>',
+			    	'<div>All other information....</div>'
+			    	].join("");
+			    	return  html;
+				});
+			svg.call(tip);
+			//
             force.on('tick', function() {
 	            link.attr('x1', function(d) {
 	                    return d.source.x;
@@ -106,9 +122,18 @@ angular.module('pvApp.d3charts.directives')
 			}
 
 			function nodeDblclick(d) {
+				tip.hide(d);
 				//d3.select(this).style('fill', '#ff0000');
 				scope.currentNode = d;
 				scope.$apply();
+			}
+
+			function nodeOnMouseOver(d) {
+				tip.show(d);
+			}
+
+			function nodeOnMouseOut(d) {
+				tip.hide(d);
 			}
         }
         return {

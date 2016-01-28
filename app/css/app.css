@@ -130,6 +130,46 @@ sample-chart1 > div {
   font: 10px sans-serif;
   pointer-events: none;
 }
+.d3-tip {
+  width: 200px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.d3-tip h3 {
+  margin-left: -5px;
+  margin-top: -10px;
+  font-size: 12px;
+  width: 200px;
+  padding: 5px;
+  color: white;
+  background: #000000;
+}
+.d3-tip .category {
+  color: white;
+}
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  pointer-events: none;
+}
+.d3-tip.n:after {
+  content: "\25BC";
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
 body {
   min-width: 720px;
 }
