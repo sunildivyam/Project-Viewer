@@ -1,12 +1,13 @@
 angular.module('pvApp.d3charts.controllers')
 .controller('graphChartController', ['$scope', 'd3graphService', 'd3graphFactory', 'd3LexService', function($scope, d3graphService, d3graphFactory, d3LexService){
 	$scope.currentNode = undefined;
+	$scope.queryParams="";
 
 	d3graphService.getGraphCategories().then (function(response) {
 		$scope.graphCategories = response.data;
 
 		// to create Dummy data
-		//console.log(JSON.stringify(d3graphFactory.createVertexData(80,$scope.graphCategories,3)));
+		//console.log(JSON.stringify(d3graphFactory.createVertexData(60,$scope.graphCategories,4)));
 		/////////////////
 	});
 	// d3graphService.getAllNodeVerticesAndEdgesData().then (function(response) {
@@ -75,4 +76,16 @@ angular.module('pvApp.d3charts.controllers')
 		});
 	});
 
+	$scope.runQuery = function(event) {
+		if ($scope.queryParams!==undefined && $scope.queryParams.trim()!=="") {
+			d3graphService.lexRunQuery($scope.queryParams).then (function(response) {
+				if (response && response.results && response.results.data) {
+					d3LexService.parseRawToGraph(response.results.data).then(function(graph) {
+						$scope.graphData = graph;
+						$scope.$emit('onGraphUpdate', graph);
+					});
+				}
+			});
+		}
+	};
 }]);

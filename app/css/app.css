@@ -90,7 +90,7 @@ sample-chart1 > div {
 }
 .d3charts-page ul.categories {
   list-style: none;
-  display: block;
+  display: inline-block;
 }
 .d3charts-page ul.categories li.category {
   display: inline-block;
@@ -105,11 +105,14 @@ sample-chart1 > div {
 .d3charts-page ul.categories li.category a:visited,
 .d3charts-page ul.categories li.category a:active {
   text-decoration: none;
-  color: black;
+  color: #ffeeff;
 }
 .d3charts-page ul.categories li.category:hover {
   background: grey;
   color: white;
+}
+.d3charts-page .query-panel {
+  display: inline-block;
 }
 .d3charts-page .force-chart .link,
 .d3charts-page .graph-chart .link {
@@ -129,9 +132,10 @@ sample-chart1 > div {
   overflow: hidden;
   font: 10px sans-serif;
   pointer-events: none;
+  color: #ffeeff;
 }
 .d3-tip {
-  width: 200px;
+  width: 250px;
   height: 80px;
   background: rgba(0, 0, 0, 0.7);
   padding: 5px;
@@ -140,12 +144,13 @@ sample-chart1 > div {
   color: #fff;
   border-radius: 2px;
   pointer-events: none;
+  font-size: 10px;
 }
 .d3-tip h3 {
   margin-left: -5px;
   margin-top: -10px;
   font-size: 12px;
-  width: 200px;
+  width: 250px;
   padding: 5px;
   color: white;
   background: #000000;
@@ -167,6 +172,25 @@ sample-chart1 > div {
   content: "\25BC";
   margin: -1px 0 0 0;
   top: 100%;
+  left: 0;
+  text-align: center;
+}
+.d3-tip.e:after {
+  content: "\25C0";
+  margin: -4px 0 0 0;
+  top: 50%;
+  left: -8px;
+}
+.d3-tip.w:after {
+  content: "\25B6";
+  margin: -4px 0 0 -1px;
+  top: 50%;
+  left: 100%;
+}
+.d3-tip.s:after {
+  content: "\25B2";
+  margin: 0 0 1px 0;
+  top: -8px;
   left: 0;
   text-align: center;
 }

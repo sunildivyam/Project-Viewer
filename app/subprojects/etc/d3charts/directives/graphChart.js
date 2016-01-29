@@ -17,13 +17,6 @@ angular.module('pvApp.d3charts.directives')
                 .remove();
             }
 
-            // else {
-            // 	var prevNodes = force.nodes() || [],
-	           //  	prevLinks = force.links() || [];
-	           //  data.data =prevNodes.concat(data.data);
-	           //  data.edges=prevLinks.concat(data.edges);
-            // }
-
             force.nodes(data.nodes)
                 .links(data.edges);
             if (forceStart===true) {
@@ -82,9 +75,11 @@ angular.module('pvApp.d3charts.directives')
 			    .attr('class', 'd3-tip')
 			    .offset([-10, 0])
 			    .html(function (d) {
-			    	var html = [
+			    	var emailid=d.properties && d.properties.person_emailId && d.properties.person_emailId.length && d.properties.person_emailId[0].value,
+			    	html = [
 			    	'<h3>Node Information</h3>',
-			    	'<div class="category">' + d.label + '</div>',
+			    	'<div class="category">CATEGORY: ' + d.label + '</div>',
+			    	'<div class="email">EMAIL: ' + emailid + '</div>',
 			    	'<div>All other information....</div>'
 			    	].join("");
 			    	return  html;

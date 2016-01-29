@@ -3,7 +3,9 @@ angular.module('pvApp.d3charts.services')
 	var urls = {
 		"graphCategories": "subprojects/data/d3charts/graph-categories.json",
 		"graphAllData": "subprojects/data/d3charts/graph-all-data.json",
-		"lexGeneratedData": "subprojects/data/d3charts/lex-generated-data.json"
+		"graphAllData6Cats": "subprojects/data/d3charts/graph-all-data-6cat.json",
+		"lexGeneratedData": "subprojects/data/d3charts/lex-generated-data.json",
+		"LEX_queryUrl": "http://someurl.com/data"
 	},
 	graphAllData;
 	fetchAllNodeVerticesAndEdgesData();
@@ -23,7 +25,7 @@ angular.module('pvApp.d3charts.services')
 		if (graphAllData!==undefined) {
 			defferedObj.resolve({"data":graphAllData});
 		} else {
-			$http.get(urls.lexGeneratedData).then(function(response) {
+			$http.get(urls.graphAllData6Cats).then(function(response) {
 				graphAllData = {
 					nodes: response.data.data,
 					edges: response.data.edges
@@ -87,11 +89,34 @@ angular.module('pvApp.d3charts.services')
 		return graphAllData;
 	}
 
+
+////**** Actual URL Hits
+	function lexRunQuery(queryparams) {
+		var defferedObj =$q.defer();
+		$http({
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			url: urls.LEX_queryUrl,
+			data: {
+				"params": queryparams
+			}
+		}).then(function(response) {
+			defferedObj.resolve(response);
+		}, function() {
+			defferedObj.resolve({errorMessage: "No Results Found or Some error occured"});
+		});
+
+		return defferedObj.promise;
+	}
+
+////***
+
 	return {
 		getGraphCategories: fetchGraphCategories,
 		getAllNodeVerticesAndEdgesData: fetchAllNodeVerticesAndEdgesData,
 		getNodesByCategory: getNodesByCategory,
 		getAllData: getAllData,
-		getChildrenOfNode: getChildrenOfNode
+		getChildrenOfNode: getChildrenOfNode,
+		lexRunQuery: lexRunQuery
 	};
 }]);

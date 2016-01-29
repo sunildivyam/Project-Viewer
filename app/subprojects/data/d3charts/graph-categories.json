@@ -10,5 +10,17 @@
 	{
 		"id"		: 3,
 		"label"		: "technology"
+	},
+	{
+		"id"		: 4,
+		"label"		: "Category4"
+	},
+	{
+		"id"		: 5,
+		"label"		: "Category5"
+	},
+	{
+		"id"		: 6,
+		"label"		: "Category6"
 	}
 ]
