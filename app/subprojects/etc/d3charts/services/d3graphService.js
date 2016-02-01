@@ -5,7 +5,7 @@ angular.module('pvApp.d3charts.services')
 		"graphAllData": "subprojects/data/d3charts/graph-all-data.json",
 		"graphAllData6Cats": "subprojects/data/d3charts/graph-all-data-6cat.json",
 		"lexGeneratedData": "subprojects/data/d3charts/lex-generated-data.json",
-		"LEX_queryUrl": "http://someurl.com/data"
+		"LEX_queryUrl": "http://10.203.100.224:8182/"
 	},
 	graphAllData;
 	fetchAllNodeVerticesAndEdgesData();
@@ -98,7 +98,7 @@ angular.module('pvApp.d3charts.services')
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			url: urls.LEX_queryUrl,
 			data: {
-				"params": queryparams
+				"gremlin": queryparams
 			}
 		}).then(function(response) {
 			defferedObj.resolve(response);
@@ -109,6 +109,26 @@ angular.module('pvApp.d3charts.services')
 		return defferedObj.promise;
 	}
 
+	function lexNodesAndEdgesByNodeId(nodeId) {
+		var defferedObj = $q.defer(),
+			nodesQuery = "g.V(" + nodeId + ").out()",
+			edgesQuery = "g.V(" + nodeId + ").outE()",
+			nodesPromise = lexRunQuery(nodesQuery).then(function(response) {
+				return response;
+			}),
+			edgesPromise =lexRunQuery(edgesQuery).then(function(response) {
+				return response;
+			});
+			$q.all([nodesPromise,edgesPromise]).then(function(response) {
+				var mergedResponse;
+				if (response && response.length===2) {
+					mergedResponse = response[0];
+					mergedResponse.data.result.data = mergedResponse.data.result.data.concat(response[1].data.result.data);
+				}
+				defferedObj.resolve(mergedResponse);
+			});
+		return defferedObj.promise;
+	}
 ////***
 
 	return {
@@ -117,6 +137,7 @@ angular.module('pvApp.d3charts.services')
 		getNodesByCategory: getNodesByCategory,
 		getAllData: getAllData,
 		getChildrenOfNode: getChildrenOfNode,
-		lexRunQuery: lexRunQuery
+		lexRunQuery: lexRunQuery,
+		lexNodesAndEdgesByNodeId: lexNodesAndEdgesByNodeId
 	};
 }]);

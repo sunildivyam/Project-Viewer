@@ -113,6 +113,14 @@ sample-chart1 > div {
 }
 .d3charts-page .query-panel {
   display: inline-block;
+  vertical-align: middle;
+}
+.d3charts-page .query-panel textarea {
+  font-size: 12px;
+}
+.d3charts-page .query-panel textarea,
+.d3charts-page .query-panel button {
+  vertical-align: middle;
 }
 .d3charts-page .force-chart .link,
 .d3charts-page .graph-chart .link {
@@ -122,9 +130,15 @@ sample-chart1 > div {
 .d3charts-page .force-chart .node,
 .d3charts-page .graph-chart .node {
   stroke: grey;
-  stroke-width: 1.5;
+  stroke-width: 1;
   stroke-opacity: .3;
   cursor: pointer;
+}
+.d3charts-page .force-chart .node:hover,
+.d3charts-page .graph-chart .node:hover {
+  stroke: yellow;
+  stroke-width: 10;
+  stroke-opacity: .3;
 }
 .d3charts-page .force-chart .node-text,
 .d3charts-page .graph-chart .node-text {
@@ -161,7 +175,7 @@ sample-chart1 > div {
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
-  font-size: 10px;
+  font-size: 14px;
   width: 100%;
   line-height: 1;
   color: rgba(0, 0, 0, 0.8);
@@ -170,7 +184,7 @@ sample-chart1 > div {
 }
 .d3-tip.n:after {
   content: "\25BC";
-  margin: -1px 0 0 0;
+  margin: -3px 0 0 0;
   top: 100%;
   left: 0;
   text-align: center;

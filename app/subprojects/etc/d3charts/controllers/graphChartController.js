@@ -67,20 +67,46 @@ angular.module('pvApp.d3charts.controllers')
 		if (node===undefined || node=== null) {
 			return;
 		}
-
-		d3graphService.getChildrenOfNode(node).then(function(data) {
-			d3LexService.parseRawToGraph(data).then(function(graph) {
-				$scope.graphData = graph;
-				$scope.$emit('onGraphUpdate', graph);
-			});
+		d3graphService.lexNodesAndEdgesByNodeId(node.id).then (function(response) {
+			if (response && response.data && response.data.result && response.data.result.data) {
+				var data = response.data.result.data;
+				d3LexService.parseRawToGraph(data).then(function(graph) {
+					$scope.graphData = graph;
+					$scope.$emit('onGraphUpdate', graph);
+				});
+			}
 		});
+
+				// var data,
+				// 	queryParams = "g.V(" + node.id + ").out()";
+				// d3graphService.lexRunQuery(queryParams).then (function(response) {
+				// 	if (response && response.data && response.data.result && response.data.result.data) {
+				// 		data = response.data.result.data;
+				// 		queryParams = "g.V(" + node.id + ").outE()";
+				// 		d3graphService.lexRunQuery(queryParams).then (function(response) {
+				// 			if (response && response.data && response.data.result && response.data.result.data) {
+				// 				data = data.concat(response.data.result.data);
+				// 				d3LexService.parseRawToGraph(data).then(function(graph) {
+				// 					$scope.graphData = graph;
+				// 					$scope.$emit('onGraphUpdate', graph);
+				// 				});
+				// 			}
+				// 		});
+				// 	}
+				// });
+		// d3graphService.getChildrenOfNode(node).then(function(data) {
+		// 	d3LexService.parseRawToGraph(data).then(function(graph) {
+		// 		$scope.graphData = graph;
+		// 		$scope.$emit('onGraphUpdate', graph);
+		// 	});
+		// });
 	});
 
 	$scope.runQuery = function(event) {
 		if ($scope.queryParams!==undefined && $scope.queryParams.trim()!=="") {
 			d3graphService.lexRunQuery($scope.queryParams).then (function(response) {
-				if (response && response.results && response.results.data) {
-					d3LexService.parseRawToGraph(response.results.data).then(function(graph) {
+				if (response && response.data && response.data.result && response.data.result.data) {
+					d3LexService.parseRawToGraph(response.data.result.data).then(function(graph) {
 						$scope.graphData = graph;
 						$scope.$emit('onGraphUpdate', graph);
 					});

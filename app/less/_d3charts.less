@@ -34,6 +34,15 @@ sample-chart1 {
 
 	.query-panel {
 		display: inline-block;
+		vertical-align: middle;
+
+		textarea {
+			font-size: 12px;
+		}
+
+		textarea, button {
+			vertical-align: middle;
+		}
 	}
 
 	.force-chart, .graph-chart {
@@ -44,9 +53,15 @@ sample-chart1 {
 
 		.node {
 			stroke: grey;
-			stroke-width: 1.5;
+			stroke-width: 1;
 			stroke-opacity: .3;
 			cursor: pointer;
+
+			&:hover {
+				stroke: yellow;
+				stroke-width: 10;
+				stroke-opacity: .3;
+			}
 		}
 
 		.node-text {
@@ -88,7 +103,7 @@ sample-chart1 {
 	&:after {
 		box-sizing: border-box;
 		display: inline;
-		font-size: 10px;
+		font-size: 14px;
 		width: 100%;
 		line-height: 1;
 		color: rgba(0, 0, 0, 0.8);
@@ -97,7 +112,7 @@ sample-chart1 {
 	}
 	&.n:after {
 		content: "\25BC";
-		margin: -1px 0 0 0;
+		margin: -3px 0 0 0;
 		top: 100%;
 		left: 0;
 		text-align: center;

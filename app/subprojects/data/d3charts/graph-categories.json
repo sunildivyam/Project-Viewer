@@ -1,11 +1,11 @@
 [
 	{
 		"id"		: 1,
-		"label"		: "company"
+		"label"		: "person"
 	},
 	{
 		"id"		: 2,
-		"label"		: "geography"
+		"label"		: "email"
 	},
 	{
 		"id"		: 3,
