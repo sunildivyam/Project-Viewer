@@ -4,17 +4,17 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		scriptsRootPath: 'app/subprojects/etc',
 		distScriptsPath: 'app/dist/scripts',
-
+		distReportsPath: 'app/dist/reports',
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
 			options: {
-
+				reporterOutput: '<%=distReportsPath%>/jshint-report.txt',
+				force: true
 			},
-			cwd: '<%=scriptsRootPath%>',
 			files: [
 				'Gruntfile.js',
-				'/**/*.js',
-				'/**/**/*.js'
+				'<%=scriptsRootPath%>/**/*.js',
+				'<%=scriptsRootPath%>/**/**/*.js'
 			]
 		},
 		concat: {
