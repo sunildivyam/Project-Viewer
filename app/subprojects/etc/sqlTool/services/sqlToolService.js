@@ -3,7 +3,7 @@ angular.module('pvApp.sqlTool.services')
 	var urls = {
 		"databasesUrl": "subprojects/data/sqlTool/databases.json",
 		"tablesUrl": "subprojects/data/sqlTool/tables.json"
-	}
+	};
 
 	function fetchDatabases() {
 		var defferedObj =$q.defer();

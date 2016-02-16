@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);

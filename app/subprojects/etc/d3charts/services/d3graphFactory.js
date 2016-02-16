@@ -8,7 +8,8 @@ angular.module('pvApp.d3charts.services')
 			data: [],
 			edges: [],
 			meta: {}
-		}
+		};
+
 		if (numberOfRecords===undefined || isNaN(numberOfRecords)) {
 			return result;
 		}
@@ -101,11 +102,16 @@ angular.module('pvApp.d3charts.services')
                     "ccBcc": "TO",
                     "email_messageId": "802872"
                 }
-        	}
+        	};
         	edges.push(edge);
         	linkCount++;
 		}
 		return edges;
+	}
+
+	function nodeOfcategory(node, index) {
+		var createdEdges = createEdgesForVertex(targetVertexNodes, node, categories[i+1], numberOfEdgesToCreate);
+		edges = edges.concat(createdEdges);
 	}
 
 	/*
@@ -115,10 +121,7 @@ angular.module('pvApp.d3charts.services')
 		var edges = [];
 		for (var i = 0; i<categories.length-1; i++) {
 			var nodesOfcategory = getNodesByCategory(targetVertexNodes,categories[i]);
-			nodesOfcategory.forEach(function(node, index) {
-				var createdEdges = createEdgesForVertex(targetVertexNodes, node, categories[i+1], numberOfEdgesToCreate);
-				edges = edges.concat(createdEdges);
-			});
+			nodesOfcategory.forEach(nodeOfcategory);
 		}
 		return edges;
 	}

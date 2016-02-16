@@ -22,7 +22,7 @@ angular.module('pvApp.d3charts.controllers')
 		    return "00000".substring(0, 6 - c.length) + c;
 		}
 		return "#" + intToRGB(category.id*234435);
-	}
+	};
 
 	$scope.selectCategory = function(event,category) {
 		$scope.currentCategory = category;
