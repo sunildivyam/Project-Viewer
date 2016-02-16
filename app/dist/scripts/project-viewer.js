@@ -1,5 +1,4 @@
 /* project-viewer.js | Created on 16/02/2016 */
-'use strict';
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);
@@ -47,12 +46,82 @@ angular.module("pvApp", [
 
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
-}]);;angular.module('pvApp.controllers')
+}]);;angular.module('pvApp.d3charts.controllers', []);
+angular.module('pvApp.d3charts.services', []);
+angular.module('pvApp.d3charts.directives', []);
+
+angular.module('pvApp.d3charts', [
+	'pvApp.d3charts.controllers',
+	'pvApp.d3charts.services',
+	'pvApp.d3charts.directives'
+])
+
+.config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
+
+	stateHelperProvider.createStates([
+	{
+		name: 'd3charts.graphchart',
+		url: '/graphchart',
+		templateUrl: "subprojects/pages/d3charts/graph-chart-landing.html",
+		controller: 'graphChartController'
+	},{
+		name: 'd3charts.forcechart',
+		url: '/forcechart',
+		templateUrl: "subprojects/pages/d3charts/force-chart-landing.html",
+		controller: 'forceChartController'
+	}]);
+}])
+
+.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
+
+	$rootScope.$state = $state;
+	$rootScope.$stateParams = $stateParams;
+}]);
+
+;angular.module('pvApp.sqlTool.controllers', []);
+angular.module('pvApp.sqlTool.services', []);
+angular.module('pvApp.sqlTool.directives', []);
+
+angular.module('pvApp.sqlTool', [
+	'pvApp.sqlTool.controllers',
+	'pvApp.sqlTool.services',
+	'pvApp.sqlTool.directives'
+])
+
+.config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
+
+	stateHelperProvider.createStates([
+	{
+		name: 'sqltool.tables',
+		url: '/tables?dbid&tableid',
+		templateUrl: "subprojects/pages/sqlTool/tables.html",
+		controller: 'tablesController'
+	},{
+		name: 'sqltool.state2',
+		url: '/state2',
+		templateUrl: "subprojects/pages/sqlTool/state2.html"
+	}]);
+}])
+
+.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
+	// $templateRequest('subprojects/pages/sqlTool/sql-table.html').then(function(response) {
+	// 	$templateCache.put('sql-table.html', response);
+	// });
+
+	// $templateRequest('subprojects/pages/sqlTool/tables-list.html').then(function(response) {
+	// 	$templateCache.put('tables-list.html', response);
+	// });
+
+	$rootScope.$state = $state;
+	$rootScope.$stateParams = $stateParams;
+}]);
+
+;angular.module('pvApp.controllers')
 .controller('appController', ['$rootScope', '$scope', function($rootScope, $scope){
-	
+
 }]);;angular.module('pvApp.controllers')
 .controller('homeController', ['$scope', function($scope){
-	
+
 }]);;angular.module('pvApp.d3charts.controllers')
 .controller('d3chartsController', ['$scope', '$templateCache', function($scope, $templateCache){
 
@@ -118,7 +187,7 @@ d3chartsService.getForceGraphData().then (function(response) {
 		    return "00000".substring(0, 6 - c.length) + c;
 		}
 		return "#" + intToRGB(category.id*234435);
-	}
+	};
 
 	$scope.selectCategory = function(event,category) {
 		$scope.currentCategory = category;
@@ -210,39 +279,7 @@ d3chartsService.getForceGraphData().then (function(response) {
 			});
 		}
 	};
-}]);;angular.module('pvApp.d3charts.controllers', []);
-angular.module('pvApp.d3charts.services', []);
-angular.module('pvApp.d3charts.directives', []);
-
-angular.module('pvApp.d3charts', [
-	'pvApp.d3charts.controllers',
-	'pvApp.d3charts.services',
-	'pvApp.d3charts.directives'
-])
-
-.config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
-
-	stateHelperProvider.createStates([
-	{
-		name: 'd3charts.graphchart',
-		url: '/graphchart',
-		templateUrl: "subprojects/pages/d3charts/graph-chart-landing.html",
-		controller: 'graphChartController'
-	},{
-		name: 'd3charts.forcechart',
-		url: '/forcechart',
-		templateUrl: "subprojects/pages/d3charts/force-chart-landing.html",
-		controller: 'forceChartController'
-	}]);
-}])
-
-.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
-
-	$rootScope.$state = $state;
-	$rootScope.$stateParams = $stateParams;
-}]);
-
-;angular.module('pvApp.d3charts.directives')
+}]);;angular.module('pvApp.d3charts.directives')
     .directive('forceChart', [function() {
     	var force, color;
 
@@ -913,7 +950,8 @@ angular.module('pvApp.d3charts', [
 			data: [],
 			edges: [],
 			meta: {}
-		}
+		};
+
 		if (numberOfRecords===undefined || isNaN(numberOfRecords)) {
 			return result;
 		}
@@ -1006,11 +1044,16 @@ angular.module('pvApp.d3charts', [
                     "ccBcc": "TO",
                     "email_messageId": "802872"
                 }
-        	}
+        	};
         	edges.push(edge);
         	linkCount++;
 		}
 		return edges;
+	}
+
+	function nodeOfcategory(node, index) {
+		var createdEdges = createEdgesForVertex(targetVertexNodes, node, categories[i+1], numberOfEdgesToCreate);
+		edges = edges.concat(createdEdges);
 	}
 
 	/*
@@ -1020,10 +1063,7 @@ angular.module('pvApp.d3charts', [
 		var edges = [];
 		for (var i = 0; i<categories.length-1; i++) {
 			var nodesOfcategory = getNodesByCategory(targetVertexNodes,categories[i]);
-			nodesOfcategory.forEach(function(node, index) {
-				var createdEdges = createEdgesForVertex(targetVertexNodes, node, categories[i+1], numberOfEdgesToCreate);
-				edges = edges.concat(createdEdges);
-			});
+			nodesOfcategory.forEach(nodeOfcategory);
 		}
 		return edges;
 	}
@@ -1381,7 +1421,7 @@ angular.module('pvApp.d3charts', [
 	var urls = {
 		"databasesUrl": "subprojects/data/sqlTool/databases.json",
 		"tablesUrl": "subprojects/data/sqlTool/tables.json"
-	}
+	};
 
 	function fetchDatabases() {
 		var defferedObj =$q.defer();
@@ -1397,41 +1437,4 @@ angular.module('pvApp.d3charts', [
 	return {
 		getDatabases: fetchDatabases
 	};
-}]);;angular.module('pvApp.sqlTool.controllers', []);
-angular.module('pvApp.sqlTool.services', []);
-angular.module('pvApp.sqlTool.directives', []);
-
-angular.module('pvApp.sqlTool', [
-	'pvApp.sqlTool.controllers',
-	'pvApp.sqlTool.services',
-	'pvApp.sqlTool.directives'
-])
-
-.config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
-
-	stateHelperProvider.createStates([
-	{
-		name: 'sqltool.tables',
-		url: '/tables?dbid&tableid',
-		templateUrl: "subprojects/pages/sqlTool/tables.html",
-		controller: 'tablesController'
-	},{
-		name: 'sqltool.state2',
-		url: '/state2',
-		templateUrl: "subprojects/pages/sqlTool/state2.html"
-	}]);
-}])
-
-.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
-	// $templateRequest('subprojects/pages/sqlTool/sql-table.html').then(function(response) {
-	// 	$templateCache.put('sql-table.html', response);
-	// });
-
-	// $templateRequest('subprojects/pages/sqlTool/tables-list.html').then(function(response) {
-	// 	$templateCache.put('tables-list.html', response);
-	// });
-
-	$rootScope.$state = $state;
-	$rootScope.$stateParams = $stateParams;
 }]);
-
