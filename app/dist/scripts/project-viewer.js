@@ -1,4 +1,4 @@
-/* project-viewer.js | Created on 16/02/2016 */
+/* project-viewer.js | Created on 17/02/2016 */
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);
@@ -118,10 +118,10 @@ angular.module('pvApp.sqlTool', [
 
 ;angular.module('pvApp.controllers')
 .controller('appController', ['$rootScope', '$scope', function($rootScope, $scope){
-
+	
 }]);;angular.module('pvApp.controllers')
 .controller('homeController', ['$scope', function($scope){
-
+	
 }]);;angular.module('pvApp.d3charts.controllers')
 .controller('d3chartsController', ['$scope', '$templateCache', function($scope, $templateCache){
 
@@ -160,9 +160,6 @@ d3chartsService.getForceGraphData().then (function(response) {
 			});
 		}, 10);
 	};
-}]);;angular.module('pvApp.d3charts.controllers')
-.controller('forceGraphConfigController', ['$scope', '$modalInstance', function($scope, $modalInstance){
-
 }]);;angular.module('pvApp.d3charts.controllers')
 .controller('graphChartController', ['$scope', 'd3graphService', 'd3graphFactory', 'd3LexService', function($scope, d3graphService, d3graphFactory, d3LexService){
 	$scope.currentNode = undefined;
@@ -1211,30 +1208,6 @@ d3chartsService.getForceGraphData().then (function(response) {
 		getChildrenOfNode: getChildrenOfNode,
 		lexRunQuery: lexRunQuery,
 		lexNodesAndEdgesByNodeId: lexNodesAndEdgesByNodeId
-	};
-}]);;angular.module('pvApp.d3charts.services')
-.factory('forceGraphConfigModal', ['$modal', function($modal){
-	var modalInstance;
-
-	return {
-		open: function(options) {
-			modalInstance = $modal.open({
-				templateUrl: 'subprojects/pages/d3charts/force-graph-config.html',
-				scope: options && options.scope,
-				controller: 'forceGraphConfigController',
-				windowClass: 'force-graph-config'
-			});
-		},
-		close: function(options) {
-			if (modalInstance) {
-				try {
-					modalInstance.dismiss();
-					modalInstance= undefined;
-				} catch(e) {
-
-				}
-			}
-		}
 	};
 }]);;angular.module('pvApp.sqlTool.controllers')
 .controller('sqlToolController', ['$scope', '$templateCache','sqlToolService', function($scope, $templateCache, sqlToolService){
