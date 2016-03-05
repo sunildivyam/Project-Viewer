@@ -1,0 +1,10 @@
+<nav class="main-sub-menu">
+	<a ui-sref="highcharts" ng-class="{'active':$state.$current.name==='highcharts'}">Overview</a>
+	<a ui-sref="highcharts.dataexplorer" ui-sref-active="active">Data Explorer</a>
+	<a ui-sref="highcharts.highchart" ui-sref-active="active">High Chart Example</a>
+</nav>
+<div class="overview" ng-if="$state.$current.name==='highcharts'">
+	<h1>High Charts Library Overview</h1>
+	<p>How High Charts Library can be used for rendering a huge variety of data in the form of charts</p>
+</div>
+<div ui-view=""></div>
