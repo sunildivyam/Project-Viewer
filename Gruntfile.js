@@ -45,7 +45,8 @@ module.exports = function(grunt) {
 					'<%=externalScriptsPath%>/angular-ui-router.stateHelper/statehelper.js',// Angular UI Router State Helper
 					'<%=externalScriptsPath%>/tinyscrollbar/jquery.tinyscrollbar.js',	// tiny Scrollbar Plugin
 					'<%=externalScriptsPath%>/d3/d3.js',	// D3 JS
-					'<%=externalScriptsPath%>/d3-tip/index.js'	// D3 tip (tooltip) Plugin
+					'<%=externalScriptsPath%>/d3-tip/index.js',	// D3 tip (tooltip) Plugin
+					'<%=externalScriptsPath%>/highcharts/highcharts.js'	// High Charts Library
 				],
 				dest: '<%=distScriptsPath%>/<%=pkg.name%>-externals.js'
 			}
