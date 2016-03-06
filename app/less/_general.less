@@ -2,7 +2,7 @@ pre {
     font-family: "arial narrow";
     font-size: 20px;
     font-weight: bold;
-    color: @pre-color;	
+    color: @pre-color;
 }
 
 a,a:active, a:visited {
@@ -10,4 +10,31 @@ a,a:active, a:visited {
 }
 a:hover {
 	color: @link-hover-color;
+}
+
+.common-btn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px;
+	width: auto;
+	cursor: pointer;
+
+	font-family: arial;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: middle;
+	color: @btn-color;
+
+	.gradient(@btn-bg-stop1-color, @btn-bg-stop2-color);
+
+	&:hover, &.hover, &.active {
+		.gradient(@btn-bg-hover-stop1-color, @btn-bg-hover-stop2-color);
+	}
+
+	&:disabled, &.disabled {
+		color: @btn-disabled-color;
+		background: @btn-disabled-bg-color;
+		cursor: default;
+	}
 }

@@ -1,3 +1,54 @@
+pre {
+  font-family: "arial narrow";
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D9600;
+}
+a,
+a:active,
+a:visited {
+  color: #0087FF;
+}
+a:hover {
+  color: #FF5F00;
+}
+.common-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+  width: auto;
+  cursor: pointer;
+  font-family: arial;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  background-color: #0087FF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0087FF), to(#0087FF));
+  background: -webkit-linear-gradient(top, #0087FF, #0087FF);
+  background: -moz-linear-gradient(top, #0087FF, #0087FF);
+  background: -ms-linear-gradient(top, #0087FF, #0087FF);
+  background: -o-linear-gradient(top, #0087FF, #0087FF);
+  background: linear-gradient(to bottom, #0087FF, #0087FF);
+}
+.common-btn:hover,
+.common-btn.hover,
+.common-btn.active {
+  background-color: #FF5F00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5F00), to(#FF5F00));
+  background: -webkit-linear-gradient(top, #FF5F00, #FF5F00);
+  background: -moz-linear-gradient(top, #FF5F00, #FF5F00);
+  background: -ms-linear-gradient(top, #FF5F00, #FF5F00);
+  background: -o-linear-gradient(top, #FF5F00, #FF5F00);
+  background: linear-gradient(to bottom, #FF5F00, #FF5F00);
+}
+.common-btn:disabled,
+.common-btn.disabled {
+  color: #BDBDBD;
+  background: #BDBDBD;
+  cursor: default;
+}
 .text-ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -13,20 +64,6 @@
 }
 .redbuttons {
   color: red;
-}
-pre {
-  font-family: "arial narrow";
-  font-size: 20px;
-  font-weight: bold;
-  color: #4D9600;
-}
-a,
-a:active,
-a:visited {
-  color: #0087FF;
-}
-a:hover {
-  color: #FF5F00;
 }
 .tinyscrollbar {
   width: 80%;
@@ -207,6 +244,38 @@ sample-chart1 > div {
   top: -8px;
   left: 0;
   text-align: center;
+}
+.dataexplorer-page {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 5px;
+  height: 500px;
+  width: 100%;
+}
+.dataexplorer-page .dock {
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #F3F3F3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F3F3F3), to(#E4E4E4));
+  background: -webkit-linear-gradient(top, #F3F3F3, #E4E4E4);
+  background: -moz-linear-gradient(top, #F3F3F3, #E4E4E4);
+  background: -ms-linear-gradient(top, #F3F3F3, #E4E4E4);
+  background: -o-linear-gradient(top, #F3F3F3, #E4E4E4);
+  background: linear-gradient(to bottom, #F3F3F3, #E4E4E4);
+}
+.dataexplorer-page .dock .dock-content {
+  display: block;
+  margin: 0px;
+  padding: 10px;
+}
+.dataexplorer-page .dock .toggle-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.dataexplorer-page .toggle-all-btn {
+  width: 200px;
 }
 body {
   min-width: 720px;
