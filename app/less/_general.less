@@ -15,7 +15,7 @@ a:hover {
 .common-btn {
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 5px;
+	padding: 5px 10px;
 	width: auto;
 	cursor: pointer;
 
@@ -33,8 +33,8 @@ a:hover {
 	}
 
 	&:disabled, &.disabled {
-		color: @btn-disabled-color;
-		background: @btn-disabled-bg-color;
-		cursor: default;
+		color: @btn-disabled-color!important;
+		background: @btn-disabled-bg-color!important;
+		cursor: default!important;
 	}
 }

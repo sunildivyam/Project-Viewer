@@ -15,7 +15,7 @@ a:hover {
 .common-btn {
   display: inline-block;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 5px 10px;
   width: auto;
   cursor: pointer;
   font-family: arial;
@@ -25,29 +25,29 @@ a:hover {
   vertical-align: middle;
   color: #ffffff;
   background-color: #0087FF;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0087FF), to(#0087FF));
-  background: -webkit-linear-gradient(top, #0087FF, #0087FF);
-  background: -moz-linear-gradient(top, #0087FF, #0087FF);
-  background: -ms-linear-gradient(top, #0087FF, #0087FF);
-  background: -o-linear-gradient(top, #0087FF, #0087FF);
-  background: linear-gradient(to bottom, #0087FF, #0087FF);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0087FF), to(#007FF1));
+  background: -webkit-linear-gradient(top, #0087FF, #007FF1);
+  background: -moz-linear-gradient(top, #0087FF, #007FF1);
+  background: -ms-linear-gradient(top, #0087FF, #007FF1);
+  background: -o-linear-gradient(top, #0087FF, #007FF1);
+  background: linear-gradient(to bottom, #0087FF, #007FF1);
 }
 .common-btn:hover,
 .common-btn.hover,
 .common-btn.active {
   background-color: #FF5F00;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF5F00), to(#FF5F00));
-  background: -webkit-linear-gradient(top, #FF5F00, #FF5F00);
-  background: -moz-linear-gradient(top, #FF5F00, #FF5F00);
-  background: -ms-linear-gradient(top, #FF5F00, #FF5F00);
-  background: -o-linear-gradient(top, #FF5F00, #FF5F00);
-  background: linear-gradient(to bottom, #FF5F00, #FF5F00);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5F00), to(#D85C13));
+  background: -webkit-linear-gradient(top, #FF5F00, #D85C13);
+  background: -moz-linear-gradient(top, #FF5F00, #D85C13);
+  background: -ms-linear-gradient(top, #FF5F00, #D85C13);
+  background: -o-linear-gradient(top, #FF5F00, #D85C13);
+  background: linear-gradient(to bottom, #FF5F00, #D85C13);
 }
 .common-btn:disabled,
 .common-btn.disabled {
-  color: #BDBDBD;
-  background: #BDBDBD;
-  cursor: default;
+  color: #BDBDBD !important;
+  background: #D0D0D0 !important;
+  cursor: default!important;
 }
 .text-ellipsis {
   text-overflow: ellipsis;
