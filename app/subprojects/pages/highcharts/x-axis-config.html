@@ -1,4 +1,6 @@
-<span>Select Categories for X-Axis</span>
+<span class="label">Choose Chart</span>
 <select class="x-axis-categories dropkick">
-	<option ng-repeat="item in xAxisData">{{item}}</option>
+	<option ng-repeat="chartType in config.chartTypes" value="{{chartType.id}}" name="{{chartType.name}}" ng-selected="currentChartType===chartType.id">
+		{{chartType.name}}
+	</option>
 </select>

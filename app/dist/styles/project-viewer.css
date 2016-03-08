@@ -49,6 +49,10 @@ a:hover {
   background: #D0D0D0 !important;
   cursor: default!important;
 }
+.label {
+  font-family: arial;
+  font-size: 12px;
+}
 .text-ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -64,6 +68,10 @@ a:hover {
 }
 .redbuttons {
   color: red;
+}
+.pv-app .dk-option {
+  padding: 5px;
+  border-bottom: 1px solid rgba(50, 151, 253, 0.2);
 }
 .tinyscrollbar {
   width: 80%;
@@ -254,15 +262,14 @@ sample-chart1 > div {
   width: 100%;
 }
 .dataexplorer-page .dock {
-  overflow: hidden;
   box-sizing: border-box;
-  background-color: #F3F3F3;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F3F3F3), to(#E4E4E4));
-  background: -webkit-linear-gradient(top, #F3F3F3, #E4E4E4);
-  background: -moz-linear-gradient(top, #F3F3F3, #E4E4E4);
-  background: -ms-linear-gradient(top, #F3F3F3, #E4E4E4);
-  background: -o-linear-gradient(top, #F3F3F3, #E4E4E4);
-  background: linear-gradient(to bottom, #F3F3F3, #E4E4E4);
+  background-color: rgba(243, 243, 243, 0.8);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 243, 243, 0.8)), to(rgba(228, 228, 228, 0.8)));
+  background: -webkit-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
+  background: -moz-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
+  background: -ms-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
+  background: -o-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
+  background: linear-gradient(to bottom, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
 }
 .dataexplorer-page .dock .dock-content {
   display: block;
@@ -270,15 +277,26 @@ sample-chart1 > div {
   padding: 10px;
 }
 .dataexplorer-page .dock .toggle-button {
+  display: none;
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
 .dataexplorer-page .toggle-all-btn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 200px;
+}
+.dataexplorer-page .x-axis-categories {
+  width: 180px;
+}
+.dataexplorer-page .chart-container {
+  height: 500px;
 }
 body {
   min-width: 720px;
+  font-size: 12px;
 }
 body * {
   box-sizing: border-box;

@@ -8,10 +8,13 @@ angular.module('pvApp.highcharts.directives')
 	    		$timeout(function(){
 	    			var $element = $(element);
 	    			$element.find(".x-axis-categories").dropkick({
-					  mobile: true
-					});
+  					  mobile: true,
+              width: 100,
+              change: function() {
+                scope.onChartTypeChange(this.value);
+              }
+            });
     			});
-
     		}
     	};
     }]);

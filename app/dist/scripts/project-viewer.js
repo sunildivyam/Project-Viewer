@@ -1,4 +1,4 @@
-/* project-viewer.js | Created on 06/03/2016 */
+/* project-viewer.js | Created on 07/03/2016 */
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);
@@ -297,6 +297,10 @@ angular.module('pvApp.sqlTool', [
 	                scope.localToggleShow = !scope.localToggleShow;
 	            }
 	            initPanel(scope, $element);
+
+	            scope.onCategoriesChange = function(e, selectedItem) {
+					console.log("Selected Item is ISO " + selectedItem);
+				};
         	});
         }
     };
@@ -1425,9 +1429,31 @@ d3chartsService.getForceGraphData().then (function(response) {
 		}
 	};
 }]);;angular.module('pvApp.highcharts.controllers')
-.controller('dataexplorerController', ['$scope', function($scope){
-	$scope.title = "Sunil Kumar";
-	$scope.xAxisData = ["dfdsf", "dsfsdfdsf","fsdffewrewr"];
+.controller('dataexplorerController', ['$scope', 'dataExplorerService','configService', function($scope, dataExplorerService, configService){
+	$scope.config = configService.getConfig();
+
+	$scope.config.chartTypes = [];
+	$scope.currentChartType = $scope.config.DEFAULT_CHART_TYPE;
+	$scope.chartData = undefined;
+
+	//Initial Promises to be resolved.
+	$scope.chartTypepromise = dataExplorerService.getChartTypes();
+	$scope.chartDataPromise = dataExplorerService.getChartData(/*params*/);
+
+	$scope.chartTypepromise.then(function(chartTypes) {
+		$scope.config.chartTypes = chartTypes;
+	});
+
+	$scope.chartDataPromise.then(function(chartData) {
+		$scope.chartData = chartData;
+	});
+
+	$scope.onChartTypeChange = function(selectedChart) {
+		$scope.currentChartType =selectedChart;
+		$scope.chartData.series[0].type = selectedChart;
+
+		$scope.$apply();
+	};
 }]);;angular.module('pvApp.highcharts.controllers')
 .controller('highchartController', ['$scope', function($scope){
 
@@ -1435,15 +1461,6 @@ d3chartsService.getForceGraphData().then (function(response) {
 .controller('highchartsController', ['$scope', '$timeout', function($scope, $timeout){
 
 }]);;angular.module('pvApp.highcharts.directives')
-    .directive('dataExplorer', [function() {
-    	return {
-    		restrict: "AE",
-    		link: function(scope, element, attrs, controller) {
-    			var $element = $(element);
-    		}
-    	};
-    }]);
-;angular.module('pvApp.highcharts.directives')
     .directive('axisXConfig', ['$timeout',function($timeout) {
 
     	return {
@@ -1453,17 +1470,109 @@ d3chartsService.getForceGraphData().then (function(response) {
 	    		$timeout(function(){
 	    			var $element = $(element);
 	    			$element.find(".x-axis-categories").dropkick({
-					  mobile: true
-					});
+  					  mobile: true,
+              width: 100,
+              change: function() {
+                scope.onChartTypeChange(this.value);
+              }
+            });
     			});
-
     		}
     	};
     }]);
-;angular.module('pvApp.highcharts.services')
-.service('dataExplorerService', ['$q', '$http', function($q, $http){
+;angular.module('pvApp.highcharts.directives')
+    .directive('dataExplorer', ['$timeout', 'highChartsService', function($timeout, highChartsService) {
+    	var _hc = highChartsService;
+    	return {
+    		restrict: "AE",
+    		link: function(scope, element, attrs, controller) {
+    			$timeout(function(){
+    				var $element = $(element),
+	    				$chartContainer = $($element.find('.chart-container')),
+	    				chart;
 
-}]);;angular.module('pvApp.sqlTool.controllers')
+					scope.$watch('chartData', function(newValue, oldValue) {
+						if (newValue!==undefined || newValue!==null) {
+							chart = $chartContainer.highcharts(newValue);
+						}
+					}, true);
+    			});
+    		}
+    	};
+    }]);
+;angular.module("pvApp.highcharts.services")
+.service('configService', [function(){
+	var config = {
+		DEFAULT_CHART_TYPE: "line"
+	};
+
+	function getConfig() {
+		return config;
+	}
+
+	return {
+		getConfig: getConfig
+	};
+}]);;angular.module('pvApp.highcharts.services')
+.service('dataExplorerService', ['$q', '$http', function($q, $http){
+	var _localCache = {
+		"_chartTypes": {
+			"url": "subprojects/data/dataexplorer/chart-types.json",
+			"data": []
+		},
+		"_chartData": {
+			"url": "subprojects/data/dataexplorer/chart-data.json",
+			"data": {}
+		}
+	};
+
+	function isCached(data) {
+		if (typeof data !== "array" || typeof data !== "object" || (typeof data === 'array' && data.length===0) || (typeof data === 'object' && Object.keys(data)===0)) {
+			return false;
+		}
+		return true;
+	}
+
+	function getFromCacheOrAjax(localCacheObj, forced) {
+		var defferedObj = $q.defer();
+
+		if (forced===true || !isCached(localCacheObj.data)) {
+			$http.get(localCacheObj.url).then(function(response) {
+				localCacheObj.data = response.data || (typeof response.data==="array" ? [] : {});
+				defferedObj.resolve(localCacheObj.data);
+			}, function(error) {
+				localCacheObj.data = [];
+				defferedObj.resolve(localCacheObj.data);
+			});
+		} else {
+			defferedObj.resolve(localCacheObj.data);
+		}
+		return defferedObj.promise;
+	}
+
+	function getChartTypes(forced) {
+		return getFromCacheOrAjax(_localCache._chartTypes, forced);
+	}
+
+	function getChartData(forced) {
+		return getFromCacheOrAjax(_localCache._chartData, forced);
+	}
+
+	return {
+		getChartTypes: getChartTypes,
+		getChartData: getChartData
+	};
+}]);
+
+
+
+/*
+chart types
+
+
+
+
+*/;angular.module('pvApp.sqlTool.controllers')
 .controller('sqlToolController', ['$scope', '$templateCache','sqlToolService', function($scope, $templateCache, sqlToolService){
 	sqlToolService.getDatabases().then(function(response) {
 		$scope.currentDatabases = response.data;

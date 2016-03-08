@@ -135,6 +135,10 @@ angular.module('pvApp.directives')
 	                scope.localToggleShow = !scope.localToggleShow;
 	            }
 	            initPanel(scope, $element);
+
+	            scope.onCategoriesChange = function(e, selectedItem) {
+					console.log("Selected Item is ISO " + selectedItem);
+				};
         	});
         }
     };

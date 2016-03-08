@@ -1,0 +1,50 @@
+{
+	"title": {
+		"text": "Yearly Income"
+	},
+	"xAxis": {
+		"categories": ["2010","2011","2012","2013","2014","2015","2016"]
+	},
+	"yAxis": {
+		"title": {
+			"text": "Income(million)"
+		}
+	},
+	"series": [
+		{
+			"type": "spline",
+			"name": "Microsoft",
+			"data": [300,400,200,600,800,150,265]
+		},
+		{
+			"type": "spline",
+			"name": "Google",
+			"data": [700,100,250,525,325,414,612]
+		},
+		{
+			"type": "spline",
+			"name": "Sapient Global Markets",
+			"data": [123,345,812,525,325,414,414]
+		},
+		{
+			"type": "line",
+			"name": "Sapient Nitro",
+			"data": [50,200,300,211,544,788,233]
+		},
+		{
+			"type": "spline",
+			"name": "Yahoo",
+			"data": [462,232,111,564,765,252,654]
+		},
+		{
+			"type": "spline",
+			"name": "Global Logic",
+			"data": [812,763,124,456,634,788,242]
+		},
+		{
+			"type": "spline",
+			"name": "Dell",
+			"data": [614,160,250,324,325,414,515]
+		}
+	]
+}

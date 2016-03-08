@@ -1,0 +1,50 @@
+[
+	{
+		"id": "gauge",
+		"name": "Angular Gauges"
+	},
+	{
+		"id": "area",
+		"name": "Area Chart"
+	},
+	{
+		"id": "areaspline ",
+		"name": "Areaspline Chart"
+	},
+	{
+		"id": "bar",
+		"name": "Bar Chart"
+	},
+	{
+		"id": "line",
+		"name": "Line Chart"
+	},
+	{
+		"id": "spline",
+		"name": "Spline Chart"
+	},
+	{
+		"id": "column",
+		"name": "Column Chart"
+	},
+	{
+		"id": "pie",
+		"name": "Pie Chart"
+	},
+	{
+		"id": "scatter",
+		"name": "Scatter Chart"
+	},
+	{
+		"id": "arearange",
+		"name": "Area Range Chart"
+	},
+	{
+		"id": "areasplinerange",
+		"name": "Area Range Spline Chart"
+	},
+	{
+		"id": "columnrange",
+		"name": "Column Range Chart"
+	}
+]
