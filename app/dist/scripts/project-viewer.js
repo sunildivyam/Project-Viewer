@@ -1,4 +1,4 @@
-/* project-viewer.js | Created on 07/03/2016 */
+/* project-viewer.js | Created on 09/03/2016 */
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);
@@ -16,7 +16,8 @@ angular.module("pvApp", [
 	"pvApp.providers",
 	"pvApp.sqlTool",
 	"pvApp.d3charts",
-	"pvApp.highcharts"
+	"pvApp.highcharts",
+	"pvApp.contactus"
 ])
 
 .config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
@@ -42,6 +43,11 @@ angular.module("pvApp", [
 		url: '/highcharts',
 		templateUrl: "subprojects/pages/highcharts/landing.html",
 		controller: "highchartsController"
+	},{
+		name: 'contactus',
+		url: '/contactus',
+		templateUrl: "subprojects/pages/contactus/landing.html",
+		controller: "contactusController"
 	}]);
 }])
 
@@ -52,7 +58,34 @@ angular.module("pvApp", [
 
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
-}]);;angular.module('pvApp.d3charts.controllers', []);
+}]);;angular.module('pvApp.contactus.controllers', []);
+angular.module('pvApp.contactus.services', []);
+angular.module('pvApp.contactus.directives', []);
+
+angular.module('pvApp.contactus', [
+	'pvApp.contactus.controllers',
+	'pvApp.contactus.services',
+	'pvApp.contactus.directives'
+])
+
+.config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
+	//create child states if required
+	// stateHelperProvider.createStates([
+	// {
+	// 	name: 'contactus.state1',
+	// 	url: '/state1',
+	// 	templateUrl: "subprojects/pages/contactus/state1-landing.html",
+	// 	controller: 'state1Controller'
+	// }]);
+}])
+
+.run(["$rootScope", "$state", "$stateParams", "$templateCache",  function($rootScope, $state, $stateParams, $templateCache) {
+
+	$rootScope.$state = $state;
+	$rootScope.$stateParams = $stateParams;
+}]);
+
+;angular.module('pvApp.d3charts.controllers', []);
 angular.module('pvApp.d3charts.services', []);
 angular.module('pvApp.d3charts.directives', []);
 
@@ -314,6 +347,41 @@ angular.module('pvApp.sqlTool', [
 		return false;
 	}
 
+}]);;angular.module('pvApp.contactus.controllers')
+.controller('contactusController', ['$scope', function($scope){
+
+}]);;angular.module("pvApp.contactus.directives")
+.directive('contactusMap', ['$timeout', function($timeout){
+
+	// Runs during compile
+	return {
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		scope: {
+			width: "@",
+			height: "@",
+			currentLocation: "@"
+		},
+		// controller: function($scope, $element, $attrs, $transclude) {},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
+		// template: '',
+		templateUrl: 'subprojects/pages/contactus/contactus-map.html',
+		// replace: true,
+		// transclude: true,
+		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		link: function(scope, element, iAttrs, controller) {
+			$timeout(function(){
+				var $element = $(element);
+				// scope.$watch('currentLocation', function(newValue, oldValue) {
+				// 	if (typeof newValue==='string' && newValue!=="") {
+
+				// 	}
+				// });
+			});
+		}
+	};
 }]);;angular.module('pvApp.d3charts.controllers')
 .controller('d3chartsController', ['$scope', '$templateCache', function($scope, $templateCache){
 
@@ -352,9 +420,6 @@ d3chartsService.getForceGraphData().then (function(response) {
 			});
 		}, 10);
 	};
-}]);;angular.module('pvApp.d3charts.controllers')
-.controller('forceGraphConfigController', ['$scope', '$modalInstance', function($scope, $modalInstance){
-
 }]);;angular.module('pvApp.d3charts.controllers')
 .controller('graphChartController', ['$scope', 'd3graphService', 'd3graphFactory', 'd3LexService', function($scope, d3graphService, d3graphFactory, d3LexService){
 	$scope.currentNode = undefined;
@@ -1404,30 +1469,6 @@ d3chartsService.getForceGraphData().then (function(response) {
 		lexRunQuery: lexRunQuery,
 		lexNodesAndEdgesByNodeId: lexNodesAndEdgesByNodeId
 	};
-}]);;angular.module('pvApp.d3charts.services')
-.factory('forceGraphConfigModal', ['$modal', function($modal){
-	var modalInstance;
-
-	return {
-		open: function(options) {
-			modalInstance = $modal.open({
-				templateUrl: 'subprojects/pages/d3charts/force-graph-config.html',
-				scope: options && options.scope,
-				controller: 'forceGraphConfigController',
-				windowClass: 'force-graph-config'
-			});
-		},
-		close: function(options) {
-			if (modalInstance) {
-				try {
-					modalInstance.dismiss();
-					modalInstance= undefined;
-				} catch(e) {
-
-				}
-			}
-		}
-	};
 }]);;angular.module('pvApp.highcharts.controllers')
 .controller('dataexplorerController', ['$scope', 'dataExplorerService','configService', function($scope, dataExplorerService, configService){
 	$scope.config = configService.getConfig();
@@ -1517,11 +1558,11 @@ d3chartsService.getForceGraphData().then (function(response) {
 .service('dataExplorerService', ['$q', '$http', function($q, $http){
 	var _localCache = {
 		"_chartTypes": {
-			"url": "subprojects/data/dataexplorer/chart-types.json",
+			"url": "subprojects/data/highcharts/chart-types.json",
 			"data": []
 		},
 		"_chartData": {
-			"url": "subprojects/data/dataexplorer/chart-data.json",
+			"url": "subprojects/data/highcharts/chart-data.json",
 			"data": {}
 		}
 	};

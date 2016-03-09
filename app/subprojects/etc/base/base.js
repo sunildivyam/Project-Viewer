@@ -15,7 +15,8 @@ angular.module("pvApp", [
 	"pvApp.providers",
 	"pvApp.sqlTool",
 	"pvApp.d3charts",
-	"pvApp.highcharts"
+	"pvApp.highcharts",
+	"pvApp.contactus"
 ])
 
 .config(["$urlRouterProvider", "$stateProvider", "$locationProvider", "stateHelperProvider", function($urlRouterProvider, $stateProvider, $locationProvider, stateHelperProvider) {
@@ -41,6 +42,11 @@ angular.module("pvApp", [
 		url: '/highcharts',
 		templateUrl: "subprojects/pages/highcharts/landing.html",
 		controller: "highchartsController"
+	},{
+		name: 'contactus',
+		url: '/contactus',
+		templateUrl: "subprojects/pages/contactus/landing.html",
+		controller: "contactusController"
 	}]);
 }])
 
