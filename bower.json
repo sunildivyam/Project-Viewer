@@ -12,6 +12,7 @@
     "angular-mocks": "~1.2.x",
     "html5-boilerplate": "~4.3.0",
     "highcharts": "^4.2.3",
-    "dropkick": "^2.1.7"
+    "dropkick": "^2.1.7",
+    "flexslider": "^2.6.0"
   }
 }
