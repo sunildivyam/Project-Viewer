@@ -3,8 +3,48 @@
 	<a ui-sref="highcharts.dataexplorer" ui-sref-active="active">Data Explorer</a>
 	<a ui-sref="highcharts.highchart" ui-sref-active="active">High Chart Example</a>
 </nav>
-<div class="overview" ng-if="$state.$current.name==='highcharts'">
+<div class="overview highcharts" ng-if="$state.$current.name==='highcharts'">
 	<h1>High Charts Library Overview</h1>
 	<p>How High Charts Library can be used for rendering a huge variety of data in the form of charts</p>
+	<div class="overview-slideshow flexslider" flex-slider="" options="">
+		<ul class="slides">
+			<li>
+				<img src="images/highcharts/pie-chart.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/area-chart.jpg" />
+			</li>
+			<li>
+				<img src="images/highcharts/chart-graph.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/line-chart.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/pie-chart.gif" />
+			</li>
+			<li>
+				<img src="images/highcharts/spline-chart.jpg" />
+			</li>
+			<li>
+				<img src="images/highcharts/pie-chart.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/area-chart.jpg" />
+			</li>
+			<li>
+				<img src="images/highcharts/chart-graph.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/line-chart.png" />
+			</li>
+			<li>
+				<img src="images/highcharts/pie-chart.gif" />
+			</li>
+			<li>
+				<img src="images/highcharts/spline-chart.jpg" />
+			</li>
+		</ul>
+	</div>
 </div>
 <div ui-view=""></div>

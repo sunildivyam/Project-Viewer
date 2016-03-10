@@ -1,5 +1,98 @@
-@dock-bg-stop1-color: rgba(243,243,243,0.8); //#F3F3F3;
-@dock-bg-stop2-color: rgba(228,228,228,0.8); //#E4E4E4;
+// @dock-bg-stop1-color: rgba(243,243,243,0.8); //#F3F3F3;
+// @dock-bg-stop2-color: rgba(228,228,228,0.8); //#E4E4E4;
+
+@dock-bg-stop1-color: @main-menu-stop1-selected-color;
+@dock-bg-stop2-color: @main-menu-stop2-selected-color;
+@series-item-bg-color: #6EC371;
+
+.highcharts {
+	&.overview {
+		.overview-slideshow {
+			position: relative;
+			width: 1280;
+			height: 400px;
+			margin: 20px auto 0px auto;
+
+			.flex-viewport {
+				margin: auto;
+				width: 1205px;
+				height: 400px;
+				overflow: hidden;
+
+				ul {
+					margin: 0px;
+					padding: 0px;
+
+					li {
+						width: 600px;
+						height: 380px;
+						overflow: hidden;
+
+						img {
+							width: 600px;
+						}
+					}
+				}
+			}
+			.flex-control-nav {
+				&.flex-control-paging {
+
+				}
+			}
+
+			.flex-direction-nav {
+				margin: 0;
+			    padding: 0;
+			    list-style: none;
+
+					.flex-nav-prev {
+						.flex-prev {
+							left: 0px;
+						}
+					}
+
+					.flex-nav-next {
+						.flex-next {
+							right: 0px;
+
+							&::before {
+							    content: '\232a';
+							}
+						}
+					}
+
+					a {
+						text-align: center;
+						background: rgba(0, 0, 0, 0.5);
+						text-decoration: none;
+					    display: block;
+					    width: 40px;
+					    height: 380px;
+					    margin: 0;
+					    padding-top: 152px;
+					    position: absolute;
+					    top: 0px;
+					    z-index: 10;
+					    overflow: hidden;
+					    opacity: 0.5;
+					    cursor: pointer;
+					    color: rgba(0, 0, 0, 0.8);
+					    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+					    .transition(all 0.3s ease-in-out);
+
+					    &::before {
+				    	    font-family: "flexslider-icon";
+						    font-size: 40px;
+						    display: inline-block;
+						    content: '\2329';
+						    color: rgba(0, 0, 0, 0.8);
+						    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+					    }
+					}
+			}
+		}
+	}
+}
 
 .dataexplorer-page {
 	position: relative;
@@ -26,6 +119,10 @@
 			bottom: 10px;
 			right: 10px;
 		}
+
+		&.series-dock {
+			overflow: hidden;
+		}
 	}
 
 	.toggle-all-btn {
@@ -41,5 +138,36 @@
 
 	.chart-container {
 		height: 500px;
+	}
+
+	.series-config {
+		.series-item {
+		    display: inline-block;
+		    width: auto;
+		    max-width: 120px;
+		    border: 1px solid grey;
+		    border-radius: 5px;
+		    margin: 3px;
+		    padding: 5px;
+
+		    background: @series-item-bg-color;
+
+		    .checkbox {
+		    	display: block;
+			    .name {
+			    	display: inline-block;
+			    	max-width: 85px;
+			    	.text-ellipsis;
+			    }
+
+			    input[type="checkbox"] {
+			    	margin-right: 5px;
+			    }
+			}
+
+		    .chart-types {
+		    	width: 100px;
+		    }
+		}
 	}
 }

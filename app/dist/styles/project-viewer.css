@@ -253,6 +253,74 @@ sample-chart1 > div {
   left: 0;
   text-align: center;
 }
+.highcharts.overview .overview-slideshow {
+  position: relative;
+  width: 1280;
+  height: 400px;
+  margin: 20px auto 0px auto;
+}
+.highcharts.overview .overview-slideshow .flex-viewport {
+  margin: auto;
+  width: 1205px;
+  height: 400px;
+  overflow: hidden;
+}
+.highcharts.overview .overview-slideshow .flex-viewport ul {
+  margin: 0px;
+  padding: 0px;
+}
+.highcharts.overview .overview-slideshow .flex-viewport ul li {
+  width: 600px;
+  height: 380px;
+  overflow: hidden;
+}
+.highcharts.overview .overview-slideshow .flex-viewport ul li img {
+  width: 600px;
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav .flex-nav-prev .flex-prev {
+  left: 0px;
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav .flex-nav-next .flex-next {
+  right: 0px;
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav .flex-nav-next .flex-next::before {
+  content: '\232a';
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav a {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  display: block;
+  width: 40px;
+  height: 380px;
+  margin: 0;
+  padding-top: 152px;
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0.5;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.highcharts.overview .overview-slideshow .flex-direction-nav a::before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  display: inline-block;
+  content: '\2329';
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
 .dataexplorer-page {
   position: relative;
   overflow: hidden;
@@ -263,13 +331,13 @@ sample-chart1 > div {
 }
 .dataexplorer-page .dock {
   box-sizing: border-box;
-  background-color: rgba(243, 243, 243, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 243, 243, 0.8)), to(rgba(228, 228, 228, 0.8)));
-  background: -webkit-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
-  background: -moz-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
-  background: -ms-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
-  background: -o-linear-gradient(top, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
-  background: linear-gradient(to bottom, rgba(243, 243, 243, 0.8), rgba(228, 228, 228, 0.8));
+  background-color: #FF8500;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF8500), to(#E85600));
+  background: -webkit-linear-gradient(top, #FF8500, #E85600);
+  background: -moz-linear-gradient(top, #FF8500, #E85600);
+  background: -ms-linear-gradient(top, #FF8500, #E85600);
+  background: -o-linear-gradient(top, #FF8500, #E85600);
+  background: linear-gradient(to bottom, #FF8500, #E85600);
 }
 .dataexplorer-page .dock .dock-content {
   display: block;
@@ -282,6 +350,9 @@ sample-chart1 > div {
   bottom: 10px;
   right: 10px;
 }
+.dataexplorer-page .dock.series-dock {
+  overflow: hidden;
+}
 .dataexplorer-page .toggle-all-btn {
   position: absolute;
   top: 0px;
@@ -293,6 +364,32 @@ sample-chart1 > div {
 }
 .dataexplorer-page .chart-container {
   height: 500px;
+}
+.dataexplorer-page .series-config .series-item {
+  display: inline-block;
+  width: auto;
+  max-width: 120px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px;
+  background: #6EC371;
+}
+.dataexplorer-page .series-config .series-item .checkbox {
+  display: block;
+}
+.dataexplorer-page .series-config .series-item .checkbox .name {
+  display: inline-block;
+  max-width: 85px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.dataexplorer-page .series-config .series-item .checkbox input[type="checkbox"] {
+  margin-right: 5px;
+}
+.dataexplorer-page .series-config .series-item .chart-types {
+  width: 100px;
 }
 body {
   min-width: 720px;

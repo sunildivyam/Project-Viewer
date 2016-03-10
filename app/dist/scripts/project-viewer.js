@@ -1,4 +1,4 @@
-/* project-viewer.js | Created on 09/03/2016 */
+/* project-viewer.js | Created on 10/03/2016 */
 
 angular.module("pvApp.services", []);
 angular.module("pvApp.controllers", []);
@@ -338,7 +338,42 @@ angular.module('pvApp.sqlTool', [
         }
     };
 }]);
-;angular.module('pvApp.services')
+;angular.module("pvApp.directives")
+.directive('flexSlider', ['$timeout', function($timeout){
+    // Runs during compile
+    return {
+        scope:{
+            options : '='
+        },
+
+        link: function(scope, element, attrs) {
+
+            var defaultOptions = {                                             // Defining the default options of flexslider
+                useCSS: true,
+                animation : 'slide',
+                animationLoop : true,
+                pauseOnHover: true,
+                slideshow : true,
+                directionNav : true,
+                controlNav : false,
+                pauseOnAction: false,
+                itemWidth: 600,
+                itemMargin: 5,
+                prevText: "",
+                nextText: "",
+                slideshowSpeed: 2000
+            };
+            scope.$watch("options", function(options){
+                // If the element is having more than one slide, then combines both "options" as well as "defaultoptions"
+                // and stores inside the flexoptions.
+                if ($(element).find('ul.slides>li').length>1){
+                    var flexOptions = angular.extend({},defaultOptions,options);
+                    element.flexslider(flexOptions);
+                }
+            });
+        }// END LINK
+    }; // END
+}]);;angular.module('pvApp.services')
 .service('highChartsService', ['$q', '$http', function($q, $http){
 	if (typeof Highcharts === 'object') {
 		return Highcharts;
@@ -373,12 +408,12 @@ angular.module('pvApp.sqlTool', [
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function(scope, element, iAttrs, controller) {
 			$timeout(function(){
-				var $element = $(element);
-				// scope.$watch('currentLocation', function(newValue, oldValue) {
-				// 	if (typeof newValue==='string' && newValue!=="") {
-
-				// 	}
-				// });
+				var $element = $(element),
+					$mapIframe = $($element.find('iframe body'));
+					$mapIframe.on("click", function(event) {
+						console.log("sdsd");
+						event.preventDefault();
+					});
 			});
 		}
 	};

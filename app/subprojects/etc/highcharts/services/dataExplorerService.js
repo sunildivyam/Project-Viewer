@@ -2,11 +2,11 @@ angular.module('pvApp.highcharts.services')
 .service('dataExplorerService', ['$q', '$http', function($q, $http){
 	var _localCache = {
 		"_chartTypes": {
-			"url": "subprojects/data/dataexplorer/chart-types.json",
+			"url": "subprojects/data/highcharts/chart-types.json",
 			"data": []
 		},
 		"_chartData": {
-			"url": "subprojects/data/dataexplorer/chart-data.json",
+			"url": "subprojects/data/highcharts/chart-data.json",
 			"data": {}
 		}
 	};

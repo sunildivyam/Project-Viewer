@@ -21,12 +21,12 @@ angular.module("pvApp.contactus.directives")
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function(scope, element, iAttrs, controller) {
 			$timeout(function(){
-				var $element = $(element);
-				// scope.$watch('currentLocation', function(newValue, oldValue) {
-				// 	if (typeof newValue==='string' && newValue!=="") {
-
-				// 	}
-				// });
+				var $element = $(element),
+					$mapIframe = $($element.find('iframe body'));
+					$mapIframe.on("click", function(event) {
+						console.log("sdsd");
+						event.preventDefault();
+					});
 			});
 		}
 	};

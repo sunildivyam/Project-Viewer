@@ -6,8 +6,17 @@
 	<axis-x-config class="x-axis-config"></axis-x-config>
 </dock>
 
-<dock dock-position="top" height="100" offset-x="202" toggle-show="toggleAll">
-	<a href="#">Hello World</a>
+<dock dock-position="top" height="100" offset-x="202" toggle-show="toggleAll" class="series-dock">
+	<div class="series-config">
+		<div ng-repeat="seriesItem in chartData.series" class="series-item">
+			<div class="checkbox">
+				<input type="checkbox"/>
+				<span class="name">{{seriesItem.name}}</span>
+			</div>
+
+			<input type="text" class="chart-types"/>
+		</div>
+	</div>
 </dock>
 
 <dock dock-position="left" width="200" offset-y="102" toggle-show="toggleAll">
